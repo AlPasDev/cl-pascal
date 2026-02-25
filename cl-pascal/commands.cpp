@@ -4,11 +4,39 @@
 //
 //  Created by Alex Pascal on 2026/02/25.
 //
+constexpr int SUCCESS{0};
 
-help
-add
-sub
-random
-clear
-about
-quit
+int cm_help()
+{
+    return SUCCESS;
+}
+
+int cm_add()
+{
+    return SUCCESS;
+}
+
+int cm_sub()
+{
+    return SUCCESS;
+}
+
+int cm_random()
+{
+    return SUCCESS;
+}
+
+int cm_clear()
+{
+    return SUCCESS;
+}
+
+int cm_about()
+{
+    return SUCCESS;
+}
+
+int cm_quit()
+{
+    return SUCCESS;
+}

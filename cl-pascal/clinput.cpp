@@ -1,11 +1,7 @@
 //
-//  clengine.cpp
+//  clinput.cpp
 //  cl-pascal
 //
 //  Created by Alex Pascal on 2026/02/25.
 //
 
-bool cl_run()
-{
-    return true;
-}

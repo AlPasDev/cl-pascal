@@ -33,14 +33,25 @@ Notes:
 ===============================================================================*/
 
 #include <iostream>
+#include "main.h"
 
 void openBanner()
 {
-    
+    cout << "================================\n"
+         << CL_NAME << '\n'
+         << CL_COPYRIGHT << '\n' << '\n'
+         << "Version: "
+         << CL_VER << '\n'
+         << "================================\n";
 }
-
 int main(int argc, const char * argv[])
 {
     openBanner();
+    
+  //  do {
+  //      cl_run();
+  //  } while (!exit());
+    
+    return EXIT_SUCCESS;
     
 }
