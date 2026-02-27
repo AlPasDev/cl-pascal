@@ -14,7 +14,8 @@ Assumptions:
 Notes:
 =================================================================================*/
 
-#define cCL_VER 1.0A
+#define cCL_VER "1.0A"
+
 #include <string_view>
 #include <string>
 #include <vector>
@@ -35,7 +36,6 @@ void exitMsg();
 std::vector<std::string> sTokenize(std::string uLine);
 std::string cl_input();
 
-
 //command function prototypes
 int cm_help();
 int cm_random();
@@ -46,4 +46,4 @@ bool cm_quit();
 int arg_formatH(std::vector<std::string> uStr);
 
 //maths func prototypes
-int cm_maths(std::vector<std::string> uStr);
+float cm_maths(std::vector<std::string> uStr);

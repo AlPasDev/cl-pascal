@@ -25,7 +25,7 @@ Notes:
 using namespace std;
 
 static vector<string> fStr{};
-static int mResult{};
+static float mResult{};
 
 command cmdToInt(const string_view currentIn)
 {

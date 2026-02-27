@@ -43,8 +43,12 @@ vector<string> sTokenize(string uLine)
 
 string cl_input()
 {
+ENTER:
     string cm_In;
     getline(cin, cm_In);
+    
+    if(cm_In.empty())
+        goto ENTER;
     
     //string uInFormat{sTokenize(cm_In)};
     

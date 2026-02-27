@@ -34,11 +34,11 @@ maths mCmdToEnum(const string_view currentIn)
     return maths::MATHS_SUB;
 }
 
-int cm_maths(std::vector<std::string> uStr)
+float cm_maths(std::vector<std::string> uStr)
 {
-    int mResult{0};
-    int a = stoi(uStr[2]);
-    int b = stoi(uStr[3]);
+    float mResult{0};
+    float a = stof(uStr[2]);
+    float b = stof(uStr[3]);
     
     switch (mCmdToEnum(uStr[1])) {
         case maths::MATHS_ADD:

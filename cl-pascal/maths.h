@@ -13,6 +13,7 @@ Assumptions:
      uStr > User String
     
 Notes:
+ TODO: SQR AND MOD
 ===============================================================================*/
 
 
@@ -22,5 +23,7 @@ enum class maths
     MATHS_SUB,
     MATHS_DIV,
     MATHS_MUL,
+    MATHS_SQR, //TODO: .
+    MATHS_MOD, //TODO: .
     MATHS_INV
 };
