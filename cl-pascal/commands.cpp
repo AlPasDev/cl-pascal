@@ -4,21 +4,19 @@ Project:     cl-pascal
 Component:   command runner
 Author:      Alexander Pascal (fryman)
 Created:     2026-02-25
-Last Update: 2026-02-25
-
+Last Update: 2026-02-27
 Purpose:
- 
      functions for each command
 Overview:
  
-     help
+     help or /?
      about
-     add
-     sub
+     maths
      random
      repeat
      clear
      quit
+     /f [command]
 
 Assumptions:
     
@@ -32,18 +30,17 @@ Notes:
 
 using namespace std;
 
-constexpr int SUCCESS{0};
 constexpr string_view CL_COMMANDLIST
 {
     "help   < Prints the help menu, i.e. this one.\n"
     "about  < Prints the about/version screen\n"
-    "add    < Adds two inputted numbers together\n"
-    "sub    < Subtracts two inputted numbers together\n"
+    "maths  < \"maths [add;sub;mult;div] num1 num2\": maths functions for calculations\n"
     "rand   < Produces some random numbers from a set range\n"
     "repeat < duplicates the inputted text \n"
     "clear  < Clears the screen\n"
     "quit   < quits the application\n"
     "\n\n/f <command>    < Shows the format for each command\n"
+    "/?              < Prints the help menu, i.e. this one.\n"
 };
 
 int cm_help()
@@ -59,13 +56,9 @@ int cm_help()
     return SUCCESS;
 }
 
-int cm_add(string_view uStr)
+int cm_maths(vector<string> uStr)
 {
-    return SUCCESS;
-}
-
-int cm_sub(string_view uStr)
-{
+    
     return SUCCESS;
 }
 
@@ -89,7 +82,7 @@ int cm_repeat(string_view uStr)
     return SUCCESS;
 }
 
-int arg_formatH(string_view uStr)
+int arg_formatH(vector<string> uStr)
 {
     return SUCCESS;
 }

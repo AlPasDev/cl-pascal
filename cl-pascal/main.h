@@ -1,30 +1,49 @@
-//
-//  main.h
-//  cl-pascal
-//
-//  Created by Alex Pascal on 2026/02/25.
-//
+/*===============================================================================
+File:        main.h
+Project:     cl-pascal
+Component:   Main util
+Author:      Alexander Pascal (fryman)
+Created:     2026-02-27
+Last Update: 2026-02-27
+Purpose:
+    main header file
+Overview:
+Assumptions:
+     uStr > User String
+ 
+Notes:
+=================================================================================*/
+
 #define cCL_VER 1.0A
 #include <string_view>
 #include <string>
 #include <vector>
 
+//const strings
 constexpr std::string_view CL_NAME{"Pascal Command Line Application"};
-constexpr std::string_view CL_VER{"1.26f-0900 alpha"};
+constexpr std::string_view CL_VER{"1.27f-1140 alpha"};
 constexpr std::string_view CL_COPYRIGHT{"Copyright (c) 2026, Alexander Pascal"};
 constexpr std::string_view CL_COPYRIGHT2{"Copyright (c) 2026, PascSoft"};
 
-void openBanner();
+constexpr int SUCCESS{0};
 
+//banner/main running func prototypes
+void openBanner();
+void exitMsg();
+
+//input function prototypes
 std::vector<std::string> sTokenize(std::string uLine);
 std::string cl_input();
 
+
+//command function prototypes
 int cm_help();
-int cm_add(std::string_view uStr);
-int cm_sub(std::string_view uStr);
 int cm_random();
 int cm_clear();
 int cm_about();
 int cm_repeat(std::string_view uStr);
 bool cm_quit();
-int arg_formatH(std::string_view uStr);
+int arg_formatH(std::vector<std::string> uStr);
+
+//maths func prototypes
+int cm_maths(std::vector<std::string> uStr);

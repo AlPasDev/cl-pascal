@@ -1,9 +1,19 @@
-//
-//  clinput.cpp
-//  cl-pascal
-//
-//  Created by Alex Pascal on 2026/02/25.
-//
+/*===============================================================================
+File:        clinput.cpp
+Project:     cl-pascal
+Component:   Main util
+Author:      Alexander Pascal (fryman)
+Created:     2026-02-27
+Last Update: 2026-02-27
+Purpose:
+    Input control
+Overview:
+     
+Assumptions:
+     uStr > User String
+    
+Notes:
+===============================================================================*/
 
 
 #include <iostream>
