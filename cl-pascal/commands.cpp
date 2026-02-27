@@ -56,12 +56,6 @@ int cm_help()
     return SUCCESS;
 }
 
-int cm_maths(vector<string> uStr)
-{
-    
-    return SUCCESS;
-}
-
 int cm_random()
 {
     return SUCCESS;
