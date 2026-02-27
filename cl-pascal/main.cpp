@@ -27,6 +27,7 @@ Overview:
      functions per command
 
 Assumptions:
+     uStr > User String 
     
 Notes:
     
@@ -34,6 +35,10 @@ Notes:
 
 #include <iostream>
 #include "main.h"
+#include "clengine.h"
+
+using namespace std;
+
 
 void openBanner()
 {
@@ -48,9 +53,10 @@ int main(int argc, const char * argv[])
 {
     openBanner();
     
-  //  do {
-  //      cl_run();
-  //  } while (!exit());
+    do
+    {
+        cl_run();
+    } while (cm_quit() != true);
     
     return EXIT_SUCCESS;
     
