@@ -48,6 +48,11 @@ float cm_maths(std::vector<std::string> uStr)
             mResult = a - b;
             break;
         case maths::MATHS_DIV:
+            if(b == 0)
+            {
+                cout << "INVALID: DIVIDE BY ZERO ERROR\n\n";
+                break;
+            }
             mResult = a/b;
             break;
         case maths::MATHS_MUL:

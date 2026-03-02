@@ -31,3 +31,16 @@ enum class command
     ARG_FORMAT_H,
     CMD_INVALID
 };
+
+enum class cformats
+{
+    CMD_HELP_H,
+    CMD_ABOUT_H,
+    CMD_MATHS_H,
+    CMD_RANDOM_H,
+    CMD_REPEAT_H,
+    CMD_CLR_H,
+    CMD_QUIT_H,
+    ARG_FORMAT_H,
+    CMD_INVALID_H
+};

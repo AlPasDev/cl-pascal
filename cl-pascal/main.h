@@ -4,7 +4,7 @@ Project:     cl-pascal
 Component:   Main util
 Author:      Alexander Pascal (fryman)
 Created:     2026-02-27
-Last Update: 2026-02-27
+Last Update: 2026-03-02
 Purpose:
     main header file
 Overview:
@@ -22,11 +22,12 @@ Notes:
 
 //const strings
 constexpr std::string_view CL_NAME{"Pascal Command Line Application"};
-constexpr std::string_view CL_VER{"1.27f-1140 alpha"};
+constexpr std::string_view CL_VER{"1.02m-1324 alpha"};
 constexpr std::string_view CL_COPYRIGHT{"Copyright (c) 2026, Alexander Pascal"};
 constexpr std::string_view CL_COPYRIGHT2{"Copyright (c) 2026, PascSoft"};
 
 constexpr int SUCCESS{0};
+constexpr int FAILURE{1};
 
 //banner/main running func prototypes
 void openBanner();
@@ -41,7 +42,7 @@ int cm_help();
 int cm_random();
 int cm_clear();
 int cm_about();
-int cm_repeat(std::string_view uStr);
+int cm_repeat(std::vector<std::string> uStr);
 bool cm_quit();
 int arg_formatH(std::vector<std::string> uStr);
 

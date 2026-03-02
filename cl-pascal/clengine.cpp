@@ -36,6 +36,7 @@ command cmdToInt(const string_view currentIn)
     if(currentIn == "about") return command::CMD_ABOUT;
     if(currentIn == "clear") return command::CMD_CLR;
     if(currentIn == "quit") return command::CMD_QUIT;
+    if(currentIn == "exit") return command::CMD_QUIT;
     if(currentIn == "/f") return command::ARG_FORMAT_H;
     if(currentIn == "/?") return command::CMD_HELP;
     
@@ -49,6 +50,8 @@ void cl_prompt()
 
 void cntr_cmd(vector<string> u_ln)
 {
+    if(u_ln.empty())
+        return;
     
     switch (cmdToInt(u_ln[0])) {
         case command::CMD_HELP:
@@ -57,18 +60,24 @@ void cntr_cmd(vector<string> u_ln)
             break;
             
         case command::CMD_MATHS:
+            if(u_ln.size() < 4)
+            {
+                cout << "Incorrect Usage: maths <add|sub|mul|div> a b " << '\n';
+                break;
+            }
+            
             mResult = cm_maths(u_ln);
-            cout << mResult << '\n';
+            cout << cm_maths(u_ln) << '\n';
             
             break;
             
-        case command::CMD_RANDOM:
+        case command::CMD_RANDOM: 
             cm_random();
             
             break;
             
         case command::CMD_REPEAT:
-            cm_repeat(u_ln[1]);
+            cm_repeat(u_ln);
             
             break;
             
@@ -104,15 +113,20 @@ bool cm_quit()
     if(fStr[0] == "quit")
         return true;
     return false;
+    
 }
 
 
 bool cl_run()
 {
+NEWLINE:
     cl_prompt();
     
     
     string uStr = cl_input();      // Own the string
+    if(uStr.empty()) //TODO: CHECK IF EMPTY
+        goto NEWLINE;
+
     
     fStr = sTokenize(uStr);
 
