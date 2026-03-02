@@ -28,6 +28,14 @@ Assumptions:
      uStr > User String 
     
 Notes:
+    TODO:
+        random
+        repeat
+        run management
+        add comments
+        CHECK IF EMPTY
+        MATHS_SQR
+        MATHS_MOD
 ===============================================================================*/
 
 #include <iostream>

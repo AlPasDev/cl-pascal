@@ -13,7 +13,7 @@ Overview:
      about
      maths
      TODO: random
-     repeat
+     TODO: repeat
      clear
      quit
      /f [command]

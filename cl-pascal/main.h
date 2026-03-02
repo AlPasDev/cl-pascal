@@ -22,7 +22,7 @@ Notes:
 
 //const strings
 constexpr std::string_view CL_NAME{"Pascal Command Line Application"};
-constexpr std::string_view CL_VER{"1.02m-1324 alpha"};
+constexpr std::string_view CL_VER{"02m-1324 alpha ; pre-v1"};
 constexpr std::string_view CL_COPYRIGHT{"Copyright (c) 2026, Alexander Pascal"};
 constexpr std::string_view CL_COPYRIGHT2{"Copyright (c) 2026, PascSoft"};
 
