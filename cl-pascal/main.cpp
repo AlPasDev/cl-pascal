@@ -4,7 +4,7 @@ Project:     cl-pascal
 Component:   Main util
 Author:      Alexander Pascal (fryman)
 Created:     2026-02-25
-Last Update: 2026-02-27
+Last Update: 2026-03-03
 Purpose:
     main file
 Overview:
@@ -29,13 +29,9 @@ Assumptions:
     
 Notes:
     TODO:
-        random
-        repeat
-        run management
-        add comments
-        CHECK IF EMPTY
-        MATHS_SQR
-        MATHS_MOD
+        make token quote aware 1
+        run management 3
+ 
 ===============================================================================*/
 
 #include <iostream>
@@ -45,6 +41,20 @@ Notes:
 using namespace std;
 
 
+/*++
+openBanner()
+Routine Description:
+
+    prints the welcome banner for CL
+
+Arguments:
+Return Value:
+    void
+Side Effects:
+
+    None.
+
+--*/
 void openBanner()
 {
     cout << "================================\n"
@@ -56,12 +66,40 @@ void openBanner()
          << "================================\n";
 }
 
+/*++
+exitMsg()
+Routine Description:
+
+    prints the exit msg
+
+Arguments:
+Return Value:
+    void
+Side Effects:
+
+    None.
+
+--*/
 void exitMsg()
 {
     cout << "Thank you! - AP \n";
 }
 
+/*++
+main(int argc, const char * argv[])
+Routine Description:
 
+    main function loop
+
+Arguments:
+    int argc, const char * argv[]
+Return Value:
+    int ; EXIT_SUCCESS;
+Side Effects:
+
+    None.
+
+--*/
 int main(int argc, const char * argv[])
 {
     openBanner();

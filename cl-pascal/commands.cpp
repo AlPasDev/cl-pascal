@@ -4,7 +4,7 @@ Project:     cl-pascal
 Component:   command runner
 Author:      Alexander Pascal (fryman)
 Created:     2026-02-25
-Last Update: 2026-03-02
+Last Update: 2026-03-03
 Purpose:
      functions for each command
 Overview:
@@ -12,8 +12,8 @@ Overview:
      help or /?
      about
      maths
-     TODO: random
-     TODO: repeat
+     random
+     repeat
      clear
      quit
      /f [command]
@@ -28,22 +28,40 @@ Notes:
 #include <iostream>
 #include <sstream>
 #include <string_view>
+#include <random>
 
 using namespace std;
 
+
+//command list string ; string_view
 constexpr string_view CL_COMMANDLIST
 {
     "help   < Prints the help menu, i.e. this one.\n"
     "about  < Prints the about/version screen\n"
     "maths  < \"maths [add;sub;mult;div] num1 num2\": maths functions for calculations\n"
     "rand   < (UNDER CONSTRUCTION)Produces some random numbers from a set range\n"
-    "repeat < duplicates the inputted text \n"
+    "echo   < duplicates the inputted text \n"
     "clear  < Clears the screen\n"
     "quit   < quits the application\n"
     "\n\n/f <command>    < Shows the format for each command\n"
     "/?              < Prints the help menu, i.e. this one.\n"
 };
 
+/*++
+cm_help()
+Routine Description:
+
+    help command banner
+
+Arguments:
+     
+Return Value:
+    SUCCESS ; int
+Side Effects:
+
+    None.
+
+--*/
 int cm_help()
 {
     cout << "\nSELECTED: HELP\n";
@@ -56,11 +74,73 @@ int cm_help()
     return SUCCESS;
 }
 
-int cm_random() //TODO: ..
+/*++
+cm_random(vector<string> uStr)
+Routine Description:
+
+    random command
+
+Arguments:
+     
+Return Value:
+    SUCCESS
+Side Effects:
+
+    None.
+
+--*/
+int cm_random(vector<string> uStr)
 {
+    if(uStr.size() > 3 || uStr.size() < 3)
+    {
+        cout << "FORMAT: rand [min-range] [max-range]" << '\n';
+        return FAILURE;
+    }
+    
+    int min{};
+    int max{};
+    
+    try
+    {
+        min = stoi(uStr[1]);
+        max = stoi(uStr[2]);
+    }
+    catch (...)
+    {
+        cout << "ERROR: Args must be integers.\n";
+        return FAILURE;
+    }
+    
+    if(min > max)
+    {
+        cout << "ERROR: [min-range] must not be larger than [max-range]\n";
+        return FAILURE;
+    }
+    
+    static random_device rd;
+    static mt19937 gen(rd());
+    uniform_int_distribution<> dist(min, max);
+    
+    cout << dist(gen) << '\n';
+    
     return FAILURE;
 }
 
+/*++
+cm_clear()
+Routine Description:
+
+    clear command
+
+Arguments:
+     
+Return Value:
+    SUCCESS
+Side Effects:
+
+    None.
+
+--*/
 int cm_clear()
 {
     for(int i{0}; i < 50; ++i)
@@ -69,28 +149,79 @@ int cm_clear()
     return SUCCESS;
 }
 
+/*++
+cm_about()
+Routine Description:
+
+    about command;
+
+Arguments:
+     
+Return Value:
+    SUCCESS ; int
+Side Effects:
+
+    None.
+
+--*/
 int cm_about()
 {
     openBanner();
     return SUCCESS;
 }
 
-int cm_repeat(vector<string> uStr) //TODO: ...
+/*++
+cm_echo()
+Routine Description:
+
+    echo command
+
+Arguments:
+     
+Return Value:
+    SUCCESS ; int
+Side Effects:
+
+    None.
+
+--*/
+int cm_echo(vector<string> uStr) //TODO: ...
 {
-    int max = stoi(uStr[3]);
-    for(int i{0}; i < max; ++i)
+    if(uStr.size() > 2 || uStr.size() < 2)
     {
-        cout << uStr[2] << '\n';
+        cout << "FORMAT: echo \"phrase\" [repeat-amount] " << '\n';
+        return FAILURE;
     }
+
+   // int max = stoi(uStr[3]);
+   // for(int i{0}; i < max; i++)
+    //{
+        cout << uStr[1] << '\n';
+   // }
     return SUCCESS;
 }
 
+/*++
+helpToInt(const string_view currentIn)
+Routine Description:
+
+    help command to enum type
+
+Arguments:
+    const string_view currentIn
+Return Value:
+    command::CMD_INVALID_H;
+Side Effects:
+
+    None.
+
+--*/
 cformats helpToInt(const string_view currentIn)
 {
     if(currentIn == "help") return cformats::CMD_HELP_H;
     if(currentIn == "maths") return cformats::CMD_MATHS_H;
     if(currentIn == "rand") return cformats::CMD_RANDOM_H;
-    if(currentIn == "repeat") return cformats::CMD_REPEAT_H;
+    if(currentIn == "repeat") return cformats::CMD_ECHO_H;
     if(currentIn == "about") return cformats::CMD_ABOUT_H;
     if(currentIn == "clear") return cformats::CMD_CLR_H;
     if(currentIn == "quit") return cformats::CMD_QUIT_H;
@@ -100,9 +231,28 @@ cformats helpToInt(const string_view currentIn)
     return cformats::CMD_INVALID_H;
 }
 
+/*++
+arg_formatH(vector<string> uStr)
+Routine Description:
 
-int arg_formatH(vector<string> uStr) 
+    format finder for command
+ 
+Arguments:
+     
+Return Value:
+    SUCCESS
+Side Effects:
+
+    None.
+
+--*/
+int arg_formatH(vector<string> uStr)
 {
+    if(uStr.size() > 2 || uStr.size() < 2)
+    {
+        cout << "FORMAT: /f <command> " << '\n';
+        return FAILURE;
+    }
     switch(helpToInt(uStr[1]))
     {
         case cformats::CMD_MATHS_H:
@@ -113,8 +263,8 @@ int arg_formatH(vector<string> uStr)
             cout << "FORMAT: rand [min-range] [max-range]" << '\n';
             break;
         
-        case cformats::CMD_REPEAT_H:
-            cout << "FORMAT: repeat \"phrase\" [repeat-amount]" << '\n';
+        case cformats::CMD_ECHO_H:
+            cout << "FORMAT: echo \"phrase\" [repeat-amount]" << '\n';
             break;
         
         case cformats::ARG_FORMAT_H:

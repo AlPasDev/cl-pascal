@@ -4,7 +4,7 @@ Project:     cl-pascal
 Component:   CL Engine util
 Author:      Alexander Pascal (fryman)
 Created:     2026-02-27
-Last Update: 2026-02-27
+Last Update: 2026-03-03
 Purpose:
     Command Line engine + Dispatch for commands
 Overview:
@@ -25,14 +25,29 @@ Notes:
 using namespace std;
 
 static vector<string> fStr{};
-static float mResult{};
+static double mResult{};
 
+/*++
+cmdToInt(const string_view currentIn)
+Routine Description:
+
+    command to enum type
+
+Arguments:
+    const string_view currentIn
+Return Value:
+    command::CMD_INVALID;
+Side Effects:
+
+    None.
+
+--*/
 command cmdToInt(const string_view currentIn)
 {
     if(currentIn == "help") return command::CMD_HELP;
     if(currentIn == "maths") return command::CMD_MATHS;
     if(currentIn == "rand") return command::CMD_RANDOM;
-    if(currentIn == "repeat") return command::CMD_REPEAT;
+    if(currentIn == "echo") return command::CMD_ECHO;
     if(currentIn == "about") return command::CMD_ABOUT;
     if(currentIn == "clear") return command::CMD_CLR;
     if(currentIn == "quit") return command::CMD_QUIT;
@@ -42,12 +57,43 @@ command cmdToInt(const string_view currentIn)
     
     return command::CMD_INVALID;
 }
+
+/*++
+cl_prompt()
+Routine Description:
+
+    prints the ">"
+
+Arguments:
+    void
+Return Value:
+    void
+Side Effects:
+
+    None.
+
+--*/
 void cl_prompt()
 {
     string_view charLn{"> "};
     cout << charLn;
 }
 
+/*++
+cntr_cmd(vector<string> u_ln)
+Routine Description:
+
+    command control switch
+
+Arguments:
+    u_ln
+Return Value:
+    void
+Side Effects:
+
+    None.
+
+--*/
 void cntr_cmd(vector<string> u_ln)
 {
     if(u_ln.empty())
@@ -70,14 +116,18 @@ void cntr_cmd(vector<string> u_ln)
             cout << cm_maths(u_ln) << '\n';
             
             break;
+//        case command::CMD_MOD:
+  //          cm_mod(u_ln);
             
-        case command::CMD_RANDOM: 
-            cm_random();
+    //        break;
+            
+        case command::CMD_RANDOM:
+            cm_random(u_ln);
             
             break;
             
-        case command::CMD_REPEAT:
-            cm_repeat(u_ln);
+        case command::CMD_ECHO:
+            cm_echo(u_ln);
             
             break;
             
@@ -108,6 +158,21 @@ void cntr_cmd(vector<string> u_ln)
     }
 }
 
+/*++
+cm_quit()
+Routine Description:
+
+    quit command; exit
+
+Arguments:
+     
+Return Value:
+    false
+Side Effects:
+
+    None.
+
+--*/
 bool cm_quit()
 {
     if(fStr[0] == "quit")
@@ -117,6 +182,21 @@ bool cm_quit()
 }
 
 
+/*++
+cl_run()
+Routine Description:
+
+    run loop
+
+Arguments:
+     
+Return Value:
+    bool true;
+Side Effects:
+
+    None.
+
+--*/
 bool cl_run()
 {
 NEWLINE:

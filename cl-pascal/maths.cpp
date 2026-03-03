@@ -4,7 +4,7 @@ Project:     cl-pascal
 Component:   Mathematics util
 Author:      Alexander Pascal (fryman)
 Created:     2026-02-27
-Last Update: 2026-02-27
+Last Update: 2026-03-03
 Purpose:
     Maths functions + control
 Overview:
@@ -24,29 +24,69 @@ Notes:
 
 using namespace std;
 
+/*++
+mCmdToEnum(const string_view currentIn)
+Routine Description:
+
+    convert the user input to enum type for commands
+
+Arguments:
+    const string_view currentIn
+Return Value:
+    maths ; MATHS_INV;
+Side Effects:
+
+    None.
+
+--*/
 maths mCmdToEnum(const string_view currentIn)
 {
     if(currentIn == "add") return maths::MATHS_ADD;
     if(currentIn == "sub") return maths::MATHS_SUB;
     if(currentIn == "div") return maths::MATHS_DIV;
     if(currentIn == "mul") return maths::MATHS_MUL;
+    if(currentIn == "pow") return maths::MATHS_POW;
+    if(currentIn == "mod") return maths::MATHS_MOD;
     
-    return maths::MATHS_SUB;
+    return maths::MATHS_INV;
 }
 
-float cm_maths(std::vector<std::string> uStr)
+/*++
+cm_maths(vector<string> uStr)
+Routine Description:
+
+    maths function
+ 
+Arguments:
+    vector<string> uStr ; user string
+Return Value:
+    double mResult; ; result for maths
+Side Effects:
+
+    None.
+
+--*/
+double cm_maths(vector<string> uStr)
 {
-    float mResult{0};
-    float a = stof(uStr[2]);
-    float b = stof(uStr[3]);
-    
+    if(uStr.size() > 4 || uStr.size() < 4)
+    {
+        cout << "FORMAT: maths [add;sub;mult;div;mod;pow] \"num1\" \"num2\"" << '\n';
+        return FAILURE;
+    }
+
+    double mResult{0};
+    double a = stof(uStr[2]);
+    double b = stof(uStr[3]);
+        
     switch (mCmdToEnum(uStr[1])) {
         case maths::MATHS_ADD:
             mResult = a + b;
             break;
+            
         case maths::MATHS_SUB:
             mResult = a - b;
             break;
+            
         case maths::MATHS_DIV:
             if(b == 0)
             {
@@ -55,13 +95,51 @@ float cm_maths(std::vector<std::string> uStr)
             }
             mResult = a/b;
             break;
+            
         case maths::MATHS_MUL:
             mResult = a*b;
             break;
+            
+        case maths::MATHS_POW:
+            mResult = pow(a, b);
+            break;
+        
+        case maths::MATHS_MOD:
+            mResult = cm_mod(uStr);
+            
+       // case maths::MATHS_MOD: TODO: MAKE A WHOLE NEW FUNCTION
+         //   mResult = a % b;
+           // break;
             
         default:
             break;
     }
     
     return mResult;
+}
+
+/*++
+cm_mod(vector<string> uStr)
+Routine Description:
+
+    modulus function
+
+Arguments:
+    vector<string> uStr
+Return Value:
+    int ; modRes; modulus result
+Side Effects:
+
+    None.
+
+--*/
+int cm_mod(vector<string> uStr)
+{
+    int modRes{0};
+    int a = stoi(uStr[2]);
+    int b = stoi(uStr[3]);
+    
+    modRes = a%b;
+    
+    return modRes;
 }

@@ -4,7 +4,7 @@ Project:     cl-pascal
 Component:   Main util
 Author:      Alexander Pascal (fryman)
 Created:     2026-02-27
-Last Update: 2026-02-27
+Last Update: 2026-03-03
 Purpose:
     cl engine header file > enum class for command
 Overview:
@@ -14,7 +14,7 @@ Assumptions:
     
 Notes:
     
-===============================================================================*/
+ ===============================================================================*/
 
 bool cl_run();
 
@@ -24,8 +24,9 @@ enum class command
     CMD_HELP,
     CMD_ABOUT,
     CMD_MATHS,
+    CMD_MOD,
     CMD_RANDOM,
-    CMD_REPEAT,
+    CMD_ECHO,
     CMD_CLR,
     CMD_QUIT,
     ARG_FORMAT_H,
@@ -37,8 +38,9 @@ enum class cformats
     CMD_HELP_H,
     CMD_ABOUT_H,
     CMD_MATHS_H,
+    CMD_MOD_H,
     CMD_RANDOM_H,
-    CMD_REPEAT_H,
+    CMD_ECHO_H,
     CMD_CLR_H,
     CMD_QUIT_H,
     ARG_FORMAT_H,

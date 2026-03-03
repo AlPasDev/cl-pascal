@@ -4,7 +4,7 @@ Project:     cl-pascal
 Component:   Main util
 Author:      Alexander Pascal (fryman)
 Created:     2026-02-27
-Last Update: 2026-02-27
+Last Update: 2026-03-03
 Purpose:
     Input control
 Overview:
@@ -21,11 +21,27 @@ Notes:
 #include <string>
 #include <string_view>
 #include <vector>
+#include <cctype>
 
 #include "main.h"
 #include "clengine.h"
 using namespace std;
 
+/*++
+sTokenize(string uLine)
+Routine Description:
+
+    tokenize the user string
+
+Arguments:
+     uLine
+Return Value:
+    tokens ; string
+Side Effects:
+
+    None.
+
+--*/
 vector<string> sTokenize(string uLine)
 {
     vector<string> tokens;
@@ -41,6 +57,21 @@ vector<string> sTokenize(string uLine)
     return tokens;
 }
 
+/*++
+cl_input()
+Routine Description:
+
+    user input function
+ 
+Arguments:
+     
+Return Value:
+    cm_In . string
+Side Effects:
+
+    None.
+
+--*/
 string cl_input()
 {
 ENTER:
