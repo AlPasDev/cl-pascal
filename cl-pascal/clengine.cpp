@@ -112,7 +112,6 @@ void cntr_cmd(vector<string> u_ln)
                 break;
             }
             
-            mResult = cm_maths(u_ln);
             cout << cm_maths(u_ln) << '\n';
             
             break;
@@ -175,8 +174,10 @@ Side Effects:
 --*/
 bool cm_quit()
 {
-    if(fStr[0] == "quit")
+    
+    if(!fStr.empty() && (fStr[0] == "quit" || fStr[0] == "exit"))
         return true;
+    
     return false;
     
 }

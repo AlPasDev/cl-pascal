@@ -123,7 +123,7 @@ int cm_random(vector<string> uStr)
     
     cout << dist(gen) << '\n';
     
-    return FAILURE;
+    return SUCCESS;
 }
 
 /*++
@@ -187,17 +187,20 @@ Side Effects:
 --*/
 int cm_echo(vector<string> uStr) //TODO: ...
 {
-    if(uStr.size() > 2 || uStr.size() < 2)
+ /*   if(uStr.size() > 2 || uStr.size() < 2)
     {
         cout << "FORMAT: echo \"phrase\" [repeat-amount] " << '\n';
         return FAILURE;
     }
+*/
+    int argsSize{static_cast<int>(uStr.size())};
+    
+    for(int i{1}; i < argsSize; ++i)
+    {
+        cout << uStr[i] << " ";
+    }
+    cout << '\n';
 
-   // int max = stoi(uStr[3]);
-   // for(int i{0}; i < max; i++)
-    //{
-        cout << uStr[1] << '\n';
-   // }
     return SUCCESS;
 }
 
