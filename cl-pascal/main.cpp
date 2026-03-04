@@ -29,6 +29,7 @@ Assumptions:
     
 Notes:
     TODO:
+        CMD_DEVINFO
         make token quote aware 1
         run management 3
  
@@ -57,13 +58,13 @@ Side Effects:
 --*/
 void openBanner()
 {
-    cout << "================================\n"
+    cout << "=======================================================================\n"
          << CL_NAME << '\n'
          << CL_COPYRIGHT << '\n' << '\n'
          << "Version: "
          << CL_VER << '\n'
          << "\"/?\" or \"help\" for help" << '\n'
-         << "================================\n";
+         << "=======================================================================\n";
 }
 
 /*++

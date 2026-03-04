@@ -29,6 +29,8 @@ Notes:
 #include <sstream>
 #include <string_view>
 #include <random>
+#include <chrono>
+#include <ctime>
 
 using namespace std;
 
@@ -36,15 +38,16 @@ using namespace std;
 //command list string ; string_view
 constexpr string_view CL_COMMANDLIST
 {
-    "help   < Prints the help menu, i.e. this one.\n"
-    "about  < Prints the about/version screen\n"
-    "maths  < \"maths [add;sub;mult;div] num1 num2\": maths functions for calculations\n"
-    "rand   < (UNDER CONSTRUCTION)Produces some random numbers from a set range\n"
-    "echo   < duplicates the inputted text \n"
-    "clear  < Clears the screen\n"
-    "quit   < quits the application\n"
-    "\n\n/f <command>    < Shows the format for each command\n"
-    "/?              < Prints the help menu, i.e. this one.\n"
+    "help    < Prints the help menu, i.e. this one.\n"
+    "about   < Prints the about/version screen\n"
+    "maths   < \"maths [add;sub;mult;div] num1 num2\": maths functions for calculations\n"
+    "rand    < (UNDER CONSTRUCTION)Produces some random numbers from a set range\n"
+    "echo    < duplicates the inputted text \n"
+    "clear   < Clears the screen\n"
+    "quit    < quits the application\n"
+    "\n\n/f <command>     < Shows the format for each command\n"
+    "/?               < Prints the help menu, i.e. this one.\n"
+    "devinfo          < Prints the developer info/debug screen\n"
 };
 
 /*++
@@ -171,6 +174,53 @@ int cm_about()
 }
 
 /*++
+cm_devInfo()
+Routine Description:
+
+    developer information command;
+
+Arguments:
+     
+Return Value:
+    SUCCESS ; int
+Side Effects:
+
+    None.
+
+--*/
+int cm_devInfo()
+{
+//    auto now = chrono::system_clock::now();
+  //  time_t time = chrono::system_clock::to_time_t(now);
+    
+    cout << "=======================================================================\n"
+         << "DEVELOPER INFO / DEBUG INFO" << '\n'
+         << CL_NAME << '\n'
+         << CL_COPYRIGHT << '\n' << '\n'
+         << "Version: "
+         << CL_VER << '\n'
+         << "STRING INFO: v [version number].[date][month]-[time] [dev stage]\n"
+         << "Compile Info: " << "\n\n"
+         << "Date:           "
+         << __DATE__ << "\nTime:           "
+         << __TIME__ << '\n'
+         << "Branch:         "
+         << CL_BRANCH << '\n'
+         << "Compiled by:    "
+         << CL_DEVNAME << '\n'
+         << "Build Lab:      "
+         << CL_BUILDLAB << '\n'
+         << "User OS Info:   "
+         << CL_USEROS
+         << "\n\n\n"
+         << "\"/?\" or \"help\" for help" << '\n'
+         << "=======================================================================\n";
+    
+    
+    return SUCCESS;
+}
+
+/*++
 cm_echo()
 Routine Description:
 
@@ -225,6 +275,7 @@ cformats helpToInt(const string_view currentIn)
     if(currentIn == "maths") return cformats::CMD_MATHS_H;
     if(currentIn == "rand") return cformats::CMD_RANDOM_H;
     if(currentIn == "repeat") return cformats::CMD_ECHO_H;
+    if(currentIn == "devinfo") return cformats::CMD_DEVINFO_H;
     if(currentIn == "about") return cformats::CMD_ABOUT_H;
     if(currentIn == "clear") return cformats::CMD_CLR_H;
     if(currentIn == "quit") return cformats::CMD_QUIT_H;
@@ -278,6 +329,7 @@ int arg_formatH(vector<string> uStr)
         case cformats::CMD_QUIT_H:
         case cformats::CMD_HELP_H:
         case cformats::CMD_CLR_H:
+        case cformats::CMD_DEVINFO_H:
             cout << "NO ARGUMENTS FOR COMMAND.\n";
             break;
         

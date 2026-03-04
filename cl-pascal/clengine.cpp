@@ -24,8 +24,8 @@ Notes:
 
 using namespace std;
 
-static vector<string> fStr{};
-static double mResult{};
+static vector<string> fStr{}; //Formatted String
+//static double mResult{};      //math result
 
 /*++
 cmdToInt(const string_view currentIn)
@@ -48,6 +48,8 @@ command cmdToInt(const string_view currentIn)
     if(currentIn == "maths") return command::CMD_MATHS;
     if(currentIn == "rand") return command::CMD_RANDOM;
     if(currentIn == "echo") return command::CMD_ECHO;
+    if(currentIn == "devinfo") return command::CMD_DEVINFO;
+    if(currentIn == "developer") return command::CMD_DEVINFO;
     if(currentIn == "about") return command::CMD_ABOUT;
     if(currentIn == "clear") return command::CMD_CLR;
     if(currentIn == "quit") return command::CMD_QUIT;
@@ -137,6 +139,11 @@ void cntr_cmd(vector<string> u_ln)
             
         case command::CMD_CLR:
             cm_clear();
+            
+            break;
+        
+        case command::CMD_DEVINFO:
+            cm_devInfo();
             
             break;
             

@@ -51,6 +51,16 @@ maths mCmdToEnum(const string_view currentIn)
     return maths::MATHS_INV;
 }
 
+/*
+bool typeCheck(vector<string> uStr)
+{
+    istringstream iss(uStr);
+    float test;
+    
+    if(!(iss >> test))
+        return FAILURE;
+}
+*/
 /*++
 cm_maths(vector<string> uStr)
 Routine Description:
@@ -73,10 +83,24 @@ double cm_maths(vector<string> uStr)
         cout << "FORMAT: maths [add;sub;mult;div;mod;pow] \"num1\" \"num2\"" << '\n';
         return FAILURE;
     }
+    
+  //  if(!typeCheck(uStr))
+  //      break;
 
-    double mResult{0};
-    double a = stof(uStr[2]);
-    double b = stof(uStr[3]);
+    double mResult{0};      // result of maths
+    double a{0};            // num1
+    double b{0};            // num2
+    
+    try //Try to convert string to double
+    {
+        a = stod(uStr[2]);
+        b = stod(uStr[3]);
+    }
+    catch (...)
+    {
+        cout << "INVALID INPUT! FORMAT: maths [add;sub;mult;div;mod;pow] \"num1\" \"num2\"" << '\n';
+        return FAILURE;
+    }
         
     switch (mCmdToEnum(uStr[1])) {
         case maths::MATHS_ADD:
@@ -135,9 +159,21 @@ Side Effects:
 --*/
 int cm_mod(vector<string> uStr)
 {
-    int modRes{0};
-    int a = stoi(uStr[2]);
-    int b = stoi(uStr[3]);
+   // if(!)
+    int modRes{0};  // result of mod %
+    int a{};        // num 1
+    int b{};        // num 2
+    
+    try
+    {
+        a = stoi(uStr[2]);
+        b = stoi(uStr[3]);
+    }
+    catch (...)
+    {
+        cout << "INVALID INPUT! FORMAT: maths [add;sub;mult;div;mod;pow] \"num1\" \"num2\"" << '\n';
+        return FAILURE;
+    }
     
     modRes = a%b;
     

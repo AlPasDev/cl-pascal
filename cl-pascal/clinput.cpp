@@ -44,10 +44,10 @@ Side Effects:
 --*/
 vector<string> sTokenize(string uLine)
 {
-    vector<string> tokens;
-    istringstream iss(uLine);
+    vector<string> tokens;     //tokens from string
+    istringstream iss(uLine);  //string stream from uLine
     
-    string word;
+    string word;               //word from tokens
     
     while(iss >> word)
     {

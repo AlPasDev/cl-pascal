@@ -22,9 +22,28 @@ Notes:
 
 //const strings
 constexpr std::string_view CL_NAME{"Pascal Command Line Application"};
-constexpr std::string_view CL_VER{"v1.03m-1108 beta"};
+constexpr std::string_view CL_VER{"v1.04m-1100 BETA"};
 constexpr std::string_view CL_COPYRIGHT{"Copyright (c) 2026, Alexander Pascal"};
 constexpr std::string_view CL_COPYRIGHT2{"Copyright (c) 2026, PascSoft"};
+constexpr std::string_view CL_BRANCH{"main"};
+constexpr std::string_view CL_DEVNAME{"alpascal"};
+constexpr std::string_view CL_BUILDLAB{"MacOS @ Hilton College, South Africa"};
+
+#if defined(_WIN32)
+constexpr std::string_view CL_USEROS{"WIN32 ; Windows"};
+
+#elif defined(__APPLE__)
+constexpr std::string_view CL_USEROS{"OSX"};
+#elif defined(__linux__)
+constexpr std::string_view CL_USEROS{"LINUX"};
+
+#elif defined(__unix__)
+constexpr std::string_view CL_USEROS{"UNIX"};
+
+#else
+constexpr std::string_view CL_USEROS{"UNKNOWN OS NAME"};
+
+#endif
 
 constexpr int SUCCESS{0};
 constexpr int FAILURE{1};
@@ -43,6 +62,7 @@ int cm_random(std::vector<std::string> uStr);
 int cm_clear();
 int cm_about();
 int cm_echo(std::vector<std::string> uStr);
+int cm_devInfo();
 bool cm_quit();
 int arg_formatH(std::vector<std::string> uStr);
 

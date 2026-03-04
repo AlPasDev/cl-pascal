@@ -29,6 +29,7 @@ enum class command
     CMD_ECHO,
     CMD_CLR,
     CMD_QUIT,
+    CMD_DEVINFO,
     ARG_FORMAT_H,
     CMD_INVALID
 };
@@ -44,5 +45,6 @@ enum class cformats
     CMD_CLR_H,
     CMD_QUIT_H,
     ARG_FORMAT_H,
+    CMD_DEVINFO_H,
     CMD_INVALID_H
 };
