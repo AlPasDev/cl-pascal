@@ -21,13 +21,14 @@ Notes:
 #include <vector>
 
 //const strings
-constexpr std::string_view CL_NAME{"Pascal Command Line Application"};
-constexpr std::string_view CL_VER{"v1.04m-1100 BETA"};
+constexpr std::string_view CL_NAME{"Pascal Terminal Application"};
+constexpr std::string_view CL_VER{"v1.04m-1125 BETA"};
 constexpr std::string_view CL_COPYRIGHT{"Copyright (c) 2026, Alexander Pascal"};
 constexpr std::string_view CL_COPYRIGHT2{"Copyright (c) 2026, PascSoft"};
 constexpr std::string_view CL_BRANCH{"main"};
 constexpr std::string_view CL_DEVNAME{"alpascal"};
 constexpr std::string_view CL_BUILDLAB{"MacOS @ Hilton College, South Africa"};
+constexpr std::string_view CL_DEVSTAGE{"BETA"};
 
 #if defined(_WIN32)
 constexpr std::string_view CL_USEROS{"WIN32 ; Windows"};
@@ -61,6 +62,7 @@ int cm_help();
 int cm_random(std::vector<std::string> uStr);
 int cm_clear();
 int cm_about();
+int cm_time();
 int cm_echo(std::vector<std::string> uStr);
 int cm_devInfo();
 bool cm_quit();

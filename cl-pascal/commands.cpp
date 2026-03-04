@@ -43,6 +43,7 @@ constexpr string_view CL_COMMANDLIST
     "maths   < \"maths [add;sub;mult;div] num1 num2\": maths functions for calculations\n"
     "rand    < (UNDER CONSTRUCTION)Produces some random numbers from a set range\n"
     "echo    < duplicates the inputted text \n"
+    "time    < Shows the current date&time \n"
     "clear   < Clears the screen\n"
     "quit    < quits the application\n"
     "\n\n/f <command>     < Shows the format for each command\n"
@@ -110,13 +111,13 @@ int cm_random(vector<string> uStr)
     }
     catch (...)
     {
-        cout << "ERROR: Args must be integers.\n";
+        cerr << "ERROR: Args must be integers.\n";
         return FAILURE;
     }
     
     if(min > max)
     {
-        cout << "ERROR: [min-range] must not be larger than [max-range]\n";
+        cerr << "ERROR: [min-range] must not be larger than [max-range]\n";
         return FAILURE;
     }
     
@@ -128,6 +129,32 @@ int cm_random(vector<string> uStr)
     
     return SUCCESS;
 }
+
+
+/*++
+cm_time()
+Routine Description:
+
+    date & time output
+
+Arguments:
+     
+Return Value:
+    SUCCESS ; int
+Side Effects:
+
+    None.
+
+--*/
+int cm_time()
+{
+    auto now = chrono::system_clock::now();
+    time_t time = chrono::system_clock::to_time_t(now);
+    
+    cout << ctime(&time);
+    return SUCCESS;
+}
+
 
 /*++
 cm_clear()
@@ -206,6 +233,8 @@ int cm_devInfo()
          << __TIME__ << '\n'
          << "Branch:         "
          << CL_BRANCH << '\n'
+         << "Dev Stage:      "
+         << CL_DEVSTAGE << '\n'
          << "Compiled by:    "
          << CL_DEVNAME << '\n'
          << "Build Lab:      "
@@ -278,6 +307,7 @@ cformats helpToInt(const string_view currentIn)
     if(currentIn == "devinfo") return cformats::CMD_DEVINFO_H;
     if(currentIn == "about") return cformats::CMD_ABOUT_H;
     if(currentIn == "clear") return cformats::CMD_CLR_H;
+    if(currentIn == "time") return cformats::CMD_TIME_H;
     if(currentIn == "quit") return cformats::CMD_QUIT_H;
     if(currentIn == "/f") return cformats::ARG_FORMAT_H;
     if(currentIn == "/?") return cformats::CMD_HELP_H;
@@ -328,6 +358,7 @@ int arg_formatH(vector<string> uStr)
         case cformats::CMD_ABOUT_H:
         case cformats::CMD_QUIT_H:
         case cformats::CMD_HELP_H:
+        case cformats::CMD_TIME_H:
         case cformats::CMD_CLR_H:
         case cformats::CMD_DEVINFO_H:
             cout << "NO ARGUMENTS FOR COMMAND.\n";

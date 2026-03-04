@@ -64,6 +64,7 @@ void openBanner()
          << "Version: "
          << CL_VER << '\n'
          << "\"/?\" or \"help\" for help" << '\n'
+         << "\"devinfo\" for developer/debug info" << '\n'
          << "=======================================================================\n";
 }
 

@@ -49,6 +49,7 @@ command cmdToInt(const string_view currentIn)
     if(currentIn == "rand") return command::CMD_RANDOM;
     if(currentIn == "echo") return command::CMD_ECHO;
     if(currentIn == "devinfo") return command::CMD_DEVINFO;
+    if(currentIn == "time") return command::CMD_TIME;
     if(currentIn == "developer") return command::CMD_DEVINFO;
     if(currentIn == "about") return command::CMD_ABOUT;
     if(currentIn == "clear") return command::CMD_CLR;
@@ -110,7 +111,7 @@ void cntr_cmd(vector<string> u_ln)
         case command::CMD_MATHS:
             if(u_ln.size() < 4)
             {
-                cout << "Incorrect Usage: maths <add|sub|mul|div> a b " << '\n';
+                cerr << "Incorrect Usage: maths <add|sub|mul|div> a b " << '\n';
                 break;
             }
             
@@ -139,6 +140,10 @@ void cntr_cmd(vector<string> u_ln)
             
         case command::CMD_CLR:
             cm_clear();
+            
+            break;
+        case command::CMD_TIME:
+            cm_time();
             
             break;
         

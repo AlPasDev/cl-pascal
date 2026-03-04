@@ -98,7 +98,7 @@ double cm_maths(vector<string> uStr)
     }
     catch (...)
     {
-        cout << "INVALID INPUT! FORMAT: maths [add;sub;mult;div;mod;pow] \"num1\" \"num2\"" << '\n';
+        cerr << "INVALID INPUT! FORMAT: maths [add;sub;mult;div;mod;pow] \"num1\" \"num2\"" << '\n';
         return FAILURE;
     }
         
@@ -171,7 +171,7 @@ int cm_mod(vector<string> uStr)
     }
     catch (...)
     {
-        cout << "INVALID INPUT! FORMAT: maths [add;sub;mult;div;mod;pow] \"num1\" \"num2\"" << '\n';
+        cerr << "INVALID INPUT! FORMAT: maths [add;sub;mult;div;mod;pow] \"num1\" \"num2\"" << '\n';
         return FAILURE;
     }
     
