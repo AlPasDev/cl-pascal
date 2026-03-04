@@ -15,6 +15,7 @@ Notes:
 =================================================================================*/
 
 #define cCL_VER "1.0A"
+#define DEBUG 1
 
 #include <string_view>
 #include <string>
@@ -22,13 +23,13 @@ Notes:
 
 //const strings
 constexpr std::string_view CL_NAME{"Pascal Terminal Application"};
-constexpr std::string_view CL_VER{"v1.04m-1125 BETA"};
+constexpr std::string_view CL_VER{"v1.04m-1125 M2-BETA"};
 constexpr std::string_view CL_COPYRIGHT{"Copyright (c) 2026, Alexander Pascal"};
 constexpr std::string_view CL_COPYRIGHT2{"Copyright (c) 2026, PascSoft"};
 constexpr std::string_view CL_BRANCH{"main"};
 constexpr std::string_view CL_DEVNAME{"alpascal"};
 constexpr std::string_view CL_BUILDLAB{"MacOS @ Hilton College, South Africa"};
-constexpr std::string_view CL_DEVSTAGE{"BETA"};
+constexpr std::string_view CL_MILESTONE{"M2 - Beta"};
 
 #if defined(_WIN32)
 constexpr std::string_view CL_USEROS{"WIN32 ; Windows"};

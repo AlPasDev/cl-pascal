@@ -29,7 +29,6 @@ Assumptions:
     
 Notes:
     TODO:
-        CMD_DEVINFO
         make token quote aware 1
         run management 3
  
@@ -104,6 +103,9 @@ Side Effects:
 --*/
 int main(int argc, const char * argv[])
 {
+#ifndef DEBUG
+    std::cout << "Executable path: " << argv[0] << '\n';
+#endif
     openBanner();
     
     do

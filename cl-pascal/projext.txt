@@ -1,3 +1,19 @@
     TODO:
         make tokeniser; quote aware
         run management
+
+/*===============================================================================
+Copyright (c) ___YEAR___ , ___ORGANIZATIONNAME___
+File:        ___FILEBASENAME___
+Project:     ___PROJECTNAME___
+Component:
+Author:      ___FULLUSERNAME___
+Created:     ___DATE___
+
+Purpose:
+     
+Overview:
+
+Notes:
+
+===============================================================================*/

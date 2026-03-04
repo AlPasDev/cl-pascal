@@ -226,15 +226,15 @@ int cm_devInfo()
          << CL_COPYRIGHT << '\n' << '\n'
          << "Version: "
          << CL_VER << '\n'
-         << "STRING INFO: v [version number].[date][month]-[time] [dev stage]\n"
+         << "STRING INFO: v [version number].[date][month]-[time] [milestone]\n"
          << "Compile Info: " << "\n\n"
          << "Date:           "
          << __DATE__ << "\nTime:           "
          << __TIME__ << '\n'
          << "Branch:         "
          << CL_BRANCH << '\n'
-         << "Dev Stage:      "
-         << CL_DEVSTAGE << '\n'
+         << "Milestone:      "
+         << CL_MILESTONE << '\n'
          << "Compiled by:    "
          << CL_DEVNAME << '\n'
          << "Build Lab:      "

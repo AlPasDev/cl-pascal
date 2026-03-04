@@ -20,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		99E486342F4ED80E005EBD1C /* cl-pascal */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "cl-pascal"; sourceTree = BUILT_PRODUCTS_DIR; };
+		99E4865F2F583656005EBD1C /* TestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TestPlan.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -44,6 +45,7 @@
 		99E4862B2F4ED80E005EBD1C = {
 			isa = PBXGroup;
 			children = (
+				99E4865F2F583656005EBD1C /* TestPlan.xctestplan */,
 				99E486362F4ED80E005EBD1C /* cl-pascal */,
 				99E486352F4ED80E005EBD1C /* Products */,
 			);
