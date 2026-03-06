@@ -4,7 +4,7 @@ Project:     cl-pascal
 Component:   command runner
 Author:      Alexander Pascal (fryman)
 Created:     2026-02-25
-Last Update: 2026-03-03
+Last Update: 2026-03-05
 Purpose:
      functions for each command
 Overview:
@@ -38,14 +38,14 @@ using namespace std;
 //command list string ; string_view
 constexpr string_view CL_COMMANDLIST
 {
-    "help    < Prints the help menu, i.e. this one.\n"
-    "about   < Prints the about/version screen\n"
-    "maths   < \"maths [add;sub;mult;div] num1 num2\": maths functions for calculations\n"
-    "rand    < (UNDER CONSTRUCTION)Produces some random numbers from a set range\n"
-    "echo    < duplicates the inputted text \n"
-    "time    < Shows the current date&time \n"
-    "clear   < Clears the screen\n"
-    "quit    < quits the application\n"
+    "help       < Prints the help menu, i.e. this one.\n"
+    "about      < Prints the about/version screen\n"
+    "maths      < \"maths [add;sub;mult;div] num1 num2\": maths functions for calculations\n"
+    "rand       < \"rand [min-range] [max-range]\"        Produces some random numbers from a set range\n"
+    "echo       < echo \"phrase\" [repeat-amount]         duplicates the inputted text \n"
+    "time       < Shows the current date&time \n"
+    "clear      < Clears the screen\n"
+    "quit       < quits the application\n"
     "\n\n/f <command>     < Shows the format for each command\n"
     "/?               < Prints the help menu, i.e. this one.\n"
     "devinfo          < Prints the developer info/debug screen\n"

@@ -4,7 +4,7 @@ Project:     cl-pascal
 Component:   Main util
 Author:      Alexander Pascal (fryman)
 Created:     2026-02-25
-Last Update: 2026-03-03
+Last Update: 2026-03-05
 Purpose:
     main file
 Overview:
@@ -103,7 +103,7 @@ Side Effects:
 --*/
 int main(int argc, const char * argv[])
 {
-#ifndef DEBUG
+#if DEBUG
     std::cout << "Executable path: " << argv[0] << '\n';
 #endif
     openBanner();
@@ -115,6 +115,7 @@ int main(int argc, const char * argv[])
     
     exitMsg();
     
+    system("exit");
     return EXIT_SUCCESS;
     
 }

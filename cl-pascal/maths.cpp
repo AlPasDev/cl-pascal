@@ -21,6 +21,7 @@ Notes:
 #include <iostream>
 #include <sstream>
 #include <string_view>
+#include <cmath>
 
 using namespace std;
 
@@ -76,7 +77,7 @@ Side Effects:
     None.
 
 --*/
-double cm_maths(vector<string> uStr)
+double cm_maths(vector<string>& uStr)
 {
     if(uStr.size() > 4 || uStr.size() < 4)
     {
@@ -157,7 +158,7 @@ Side Effects:
     None.
 
 --*/
-int cm_mod(vector<string> uStr)
+int cm_mod(vector<string>& uStr)
 {
    // if(!)
     int modRes{0};  // result of mod %
