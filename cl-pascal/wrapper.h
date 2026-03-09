@@ -1,9 +1,19 @@
-//
-//  wrapper.h
-//  cl-pascal
-//
-//  Created by Alex Pascal on 2026/03/09.
-//
+/*===============================================================================
+File:        wrapper.h
+Project:     cl-pascal
+Component:   wrapper Header
+Author:      Alexander Pascal (fryman)
+Created:     2026-03-09
+Last Update: 2026-03-09
+Purpose:
+    wrapper header
+Overview:
+     
+Assumptions:
+     uStr > User String
+    
+Notes:
+=================================================================================*/
 
 int wrap_help(const std::vector<std::string>&);
 int wrap_about(const std::vector<std::string>&);

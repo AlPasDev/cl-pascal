@@ -1,9 +1,19 @@
-//
-//  wrapper.cpp
-//  cl-pascal
-//
-//  Created by Alex Pascal on 2026/03/09.
-//
+/*===============================================================================
+File:        wrapper.cpp
+Project:     cl-pascal
+Component:   wrapper functions for cmd dispatch
+Author:      Alexander Pascal (fryman)
+Created:     2026-03-09
+Last Update: 2026-03-09
+Purpose:
+    wrapper header
+Overview:
+     
+Assumptions:
+     uStr > User String
+    
+Notes:
+=================================================================================*/
 
 #include "main.h"
 #include "clengine.h"
@@ -43,6 +53,12 @@ int wrap_quit(const std::vector<std::string>&)
 
 int wrap_maths(const std::vector<std::string>& u_ln)
 {
+    if(u_ln.size() < 4)
+    {
+        std::cerr << "Incorrect Usage: maths <add|sub|mul|div> a b " << '\n';
+        return FAILURE;
+    }
+    
     std::cout << cm_maths(u_ln) << '\n';
     
     return SUCCESS;
