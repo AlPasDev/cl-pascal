@@ -42,24 +42,23 @@ Side Effects:
     None.
 
 --*/
-command cmdToInt(const string_view currentIn)
+
+command commandTable[]
 {
-    if(currentIn == "help") return command::CMD_HELP;
-    if(currentIn == "maths") return command::CMD_MATHS;
-    if(currentIn == "rand") return command::CMD_RANDOM;
-    if(currentIn == "echo") return command::CMD_ECHO;
-    if(currentIn == "devinfo") return command::CMD_DEVINFO;
-    if(currentIn == "time") return command::CMD_TIME;
-    if(currentIn == "developer") return command::CMD_DEVINFO;
-    if(currentIn == "about") return command::CMD_ABOUT;
-    if(currentIn == "clear") return command::CMD_CLR;
-    if(currentIn == "quit") return command::CMD_QUIT;
-    if(currentIn == "exit") return command::CMD_QUIT;
-    if(currentIn == "/f") return command::ARG_FORMAT_H;
-    if(currentIn == "/?") return command::CMD_HELP;
-    
-    return command::CMD_INVALID;
-}
+    {"help", wrap_help},
+    {"maths", wrap_maths},
+    {"rand", cm_random},
+    {"echo", cm_echo},
+    {"devinfo", wrap_devinfo},
+    {"time", wrap_time},
+    {"developer", wrap_devinfo},
+    {"about", wrap_about},
+    {"clear", wrap_clear},
+    {"quit", wrap_quit},
+    {"exit", wrap_quit},
+    {"/f", arg_formatH},
+    {"/?", wrap_help}
+};
 
 /*++
 cl_prompt()
@@ -102,71 +101,15 @@ void cntr_cmd(vector<string> u_ln)
     if(u_ln.empty())
         return;
     
-    switch (cmdToInt(u_ln[0])) {
-        case command::CMD_HELP:
-            cm_help();
-            
-            break;
-            
-        case command::CMD_MATHS:
-            if(u_ln.size() < 4)
-            {
-                cerr << "Incorrect Usage: maths <add|sub|mul|div> a b " << '\n';
-                break;
-            }
-            
-            cout << cm_maths(u_ln) << '\n';
-            
-            break;
-//        case command::CMD_MOD:
-  //          cm_mod(u_ln);
-            
-    //        break;
-            
-        case command::CMD_RANDOM:
-            cm_random(u_ln);
-            
-            break;
-            
-        case command::CMD_ECHO:
-            cm_echo(u_ln);
-            
-            break;
-            
-        case command::CMD_ABOUT:
-            cm_about();
-            
-            break;
-            
-        case command::CMD_CLR:
-            cm_clear();
-            
-            break;
-        case command::CMD_TIME:
-            cm_time();
-            
-            break;
-        
-        case command::CMD_DEVINFO:
-            cm_devInfo();
-            
-            break;
-            
-        case command::CMD_QUIT:
-            cm_quit();
-            
-            break;
-            
-        case command::ARG_FORMAT_H:
-            
-            arg_formatH(u_ln);
-
-            break;
-            
-        default:
-            cout << "Invalid Input";
-            break;
+    for(auto& cmd : commandTable)
+    {
+        if(u_ln[0] == cmd.name)
+        {
+            cmd.handler(u_ln);
+            return;
+        }
     }
+    
 }
 
 /*++

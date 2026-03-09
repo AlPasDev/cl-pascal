@@ -15,25 +15,15 @@ Assumptions:
 Notes:
     
  ===============================================================================*/
-
+#include "wrapper.h"
 bool cl_run();
 
-
-enum class command
+struct command
 {
-    CMD_HELP,
-    CMD_ABOUT,
-    CMD_MATHS,
-    CMD_MOD,
-    CMD_RANDOM,
-    CMD_ECHO,
-    CMD_CLR,
-    CMD_QUIT,
-    CMD_TIME,
-    CMD_DEVINFO,
-    ARG_FORMAT_H,
-    CMD_INVALID
+    std::string name;
+    int (*handler)(const std::vector<std::string>&);
 };
+
 
 enum class cformats
 {
