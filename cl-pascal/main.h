@@ -23,13 +23,13 @@ Notes:
 
 //const strings
 constexpr std::string_view CL_NAME{"Pascal Terminal Application"};
-constexpr std::string_view CL_VER{"v1.09m-0959 M2-BETA"};
+constexpr std::string_view CL_VER{"v1.09m-1130 RC1"};
 constexpr std::string_view CL_COPYRIGHT{"Copyright (c) 2026, Alexander Pascal"};
 constexpr std::string_view CL_COPYRIGHT2{"Copyright (c) 2026, PascSoft"};
-constexpr std::string_view CL_BRANCH{"cl-dispatch ; BRANCH FOR COMMAND DISPATCH"};
+constexpr std::string_view CL_BRANCH{"main"};
 constexpr std::string_view CL_DEVNAME{"alpascal"};
 constexpr std::string_view CL_BUILDLAB{"MacOS @ Hilton College, South Africa"};
-constexpr std::string_view CL_MILESTONE{"M2 - Beta"};
+constexpr std::string_view CL_MILESTONE{"M3 - RC1"};
 
 #if defined(_WIN32)
 constexpr std::string_view CL_USEROS{"WIN32 ; Windows"};

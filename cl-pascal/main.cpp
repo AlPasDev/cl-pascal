@@ -114,8 +114,13 @@ int main(int argc, const char * argv[])
     } while (cm_quit() != true);
     
     exitMsg();
-    
+
+#if defined(__APPLE__)
+  //  kill(getpid(), SIGKILL);
+    system("osascript -e 'tell application \"Terminal\" to close front window'");
+#elif defined(__WIN32)
     system("exit");
     return EXIT_SUCCESS;
+#endif
     
 }
