@@ -42,6 +42,8 @@ Side Effects:
     None.
 
 --*/
+
+/*
 command cmdToInt(const string_view currentIn)
 {
     if(currentIn == "help") return command::CMD_HELP;
@@ -60,6 +62,7 @@ command cmdToInt(const string_view currentIn)
     
     return command::CMD_INVALID;
 }
+*/
 
 /*++
 cl_prompt()
@@ -102,7 +105,16 @@ void cntr_cmd(vector<string> u_ln)
     if(u_ln.empty())
         return;
     
-    switch (cmdToInt(u_ln[0])) {
+    for(auto& cmd : commandTable)
+    {
+        if(u_ln[0] == cmd.name)
+        {
+            cmd.handler(u_ln);
+            return;
+        }
+    }
+    
+/*    switch (cmdToInt(u_ln[0])) {
         case command::CMD_HELP:
             cm_help();
             
@@ -166,7 +178,7 @@ void cntr_cmd(vector<string> u_ln)
         default:
             cout << "Invalid Input";
             break;
-    }
+    } */
 }
 
 /*++

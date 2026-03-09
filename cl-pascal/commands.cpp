@@ -93,7 +93,7 @@ Side Effects:
     None.
 
 --*/
-int cm_random(vector<string> uStr)
+int cm_random(const vector<string>& uStr)
 {
     if(uStr.size() > 3 || uStr.size() < 3)
     {
@@ -264,7 +264,7 @@ Side Effects:
     None.
 
 --*/
-int cm_echo(vector<string> uStr) //TODO: ...
+int cm_echo(const vector<string>& uStr) //TODO: ...
 {
  /*   if(uStr.size() > 2 || uStr.size() < 2)
     {
@@ -330,7 +330,7 @@ Side Effects:
     None.
 
 --*/
-int arg_formatH(vector<string> uStr)
+int arg_formatH(const vector<string>& uStr)
 {
     if(uStr.size() > 2 || uStr.size() < 2)
     {
