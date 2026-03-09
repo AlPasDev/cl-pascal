@@ -43,26 +43,22 @@ Side Effects:
 
 --*/
 
-/*
-command cmdToInt(const string_view currentIn)
+command commandTable[]
 {
-    if(currentIn == "help") return command::CMD_HELP;
-    if(currentIn == "maths") return command::CMD_MATHS;
-    if(currentIn == "rand") return command::CMD_RANDOM;
-    if(currentIn == "echo") return command::CMD_ECHO;
-    if(currentIn == "devinfo") return command::CMD_DEVINFO;
-    if(currentIn == "time") return command::CMD_TIME;
-    if(currentIn == "developer") return command::CMD_DEVINFO;
-    if(currentIn == "about") return command::CMD_ABOUT;
-    if(currentIn == "clear") return command::CMD_CLR;
-    if(currentIn == "quit") return command::CMD_QUIT;
-    if(currentIn == "exit") return command::CMD_QUIT;
-    if(currentIn == "/f") return command::ARG_FORMAT_H;
-    if(currentIn == "/?") return command::CMD_HELP;
-    
-    return command::CMD_INVALID;
-}
-*/
+    {"help", wrap_help},
+    {"maths", wrap_maths},
+    {"rand", cm_random},
+    {"echo", cm_echo},
+    {"devinfo", wrap_devinfo},
+    {"time", wrap_time},
+    {"developer", wrap_devinfo},
+    {"about", wrap_about},
+    {"clear", wrap_clear},
+    {"quit", wrap_quit},
+    {"exit", wrap_quit},
+    {"/f", arg_formatH},
+    {"/?", wrap_help}
+};
 
 /*++
 cl_prompt()

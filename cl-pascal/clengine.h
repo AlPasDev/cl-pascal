@@ -15,14 +15,7 @@ Assumptions:
 Notes:
     
  ===============================================================================*/
-int wrap_help(const std::vector<std::string>&);
-int wrap_about(const std::vector<std::string>&);
-int wrap_clear(const std::vector<std::string>&);
-int wrap_time(const std::vector<std::string>&);
-int wrap_devinfo(const std::vector<std::string>&);
-int wrap_quit(const std::vector<std::string>&);
-int wrap_maths(const std::vector<std::string>& u_ln);
-
+#include "wrapper.h"
 bool cl_run();
 
 struct command
@@ -31,39 +24,6 @@ struct command
     int (*handler)(const std::vector<std::string>&);
 };
 
-/*enum class command
-{
-    CMD_HELP,
-    CMD_ABOUT,
-    CMD_MATHS,
-    CMD_MOD,
-    CMD_RANDOM,
-    CMD_ECHO,
-    CMD_CLR,
-    CMD_QUIT,
-    CMD_TIME,
-    CMD_DEVINFO,
-    ARG_FORMAT_H,
-    CMD_INVALID
-};
-*/
-
-command commandTable[]
-{
-    {"help", wrap_help},
-    {"maths", wrap_maths},
-    {"rand", cm_random},
-    {"echo", cm_echo},
-    {"devinfo", wrap_devinfo},
-    {"time", wrap_time},
-    {"developer", wrap_devinfo},
-    {"about", wrap_about},
-    {"clear", wrap_clear},
-    {"quit", wrap_quit},
-    {"exit", wrap_quit},
-    {"/f", arg_formatH},
-    {"/?", wrap_help}
-};
 
 enum class cformats
 {

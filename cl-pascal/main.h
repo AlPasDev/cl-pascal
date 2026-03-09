@@ -58,6 +58,8 @@ void exitMsg();
 std::vector<std::string> sTokenize(std::string uLine);
 std::string cl_input();
 
+
+
 //command function prototypes
 int cm_help();
 int cm_random(const std::vector<std::string>& uStr);

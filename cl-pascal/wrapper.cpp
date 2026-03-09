@@ -7,9 +7,9 @@
 
 #include "main.h"
 #include "clengine.h"
+#include "wrapper.h"
 
 #include <iostream>
-
 
 int wrap_help(const std::vector<std::string>&)
 {
