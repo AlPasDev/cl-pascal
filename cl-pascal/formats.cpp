@@ -73,7 +73,7 @@ int arg_formatH(const vector<string>& uStr)
     switch(helpToInt(uStr[1]))
     {
         case cformats::CMD_MATHS_H:
-            cout << "FORMAT: maths [add;sub;mult;div] \"num1\" \"num2\"" << '\n';
+            cout << "FORMAT: maths [+|-|/|;|%|pow] \"num1\" \"num2\"" << '\n';
             break;
             
         case cformats::CMD_RANDOM_H:

@@ -82,7 +82,7 @@ double cm_maths(const vector<string>& uStr)
 {
     if(uStr.size() > 4 || uStr.size() < 4)
     {
-        cout << "FORMAT: maths [add;sub;mult;div;mod;pow] \"num1\" \"num2\"" << '\n';
+        cout << "FORMAT: maths [+|-|/|;|%|pow] \"num1\" \"num2\"" << '\n';
         return FAILURE;
     }
     
@@ -95,16 +95,16 @@ double cm_maths(const vector<string>& uStr)
     
     try //Try to convert string to double
     {
-        a = stod(uStr[2]);
+        a = stod(uStr[1]);
         b = stod(uStr[3]);
     }
     catch (...)
     {
-        cerr << "INVALID INPUT! FORMAT: maths [add;sub;mult;div;mod;pow] \"num1\" \"num2\"" << '\n';
+        cerr << "INVALID INPUT! FORMAT: maths [+|-|/|;|%|pow] \"num1\" \"num2\"" << '\n';
         return FAILURE;
     }
         
-    switch (mCmdToEnum(uStr[1])) {
+    switch (mCmdToEnum(uStr[2])) {
         case maths::MATHS_ADD:
             mResult = a + b;
             break;
@@ -168,7 +168,7 @@ int cm_mod(const vector<string>& uStr)
     
     try
     {
-        a = stoi(uStr[2]);
+        a = stoi(uStr[1]);
         b = stoi(uStr[3]);
     }
     catch (...)
