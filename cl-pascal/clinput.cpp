@@ -16,12 +16,7 @@ Notes:
 ===============================================================================*/
 
 
-#include <iostream>
-#include <sstream>
-#include <string>
-#include <string_view>
-#include <vector>
-#include <cctype>
+#include "headers.h"
 
 #include "main.h"
 #include "clengine.h"

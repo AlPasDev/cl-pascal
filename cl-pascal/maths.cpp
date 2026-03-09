@@ -19,10 +19,8 @@ Notes:
 #include "main.h"
 #include "clengine.h"
 #include "maths.h"
-#include <iostream>
-#include <sstream>
-#include <string_view>
-#include <cmath>
+#include "headers.h"
+
 
 using namespace std;
 
@@ -173,7 +171,7 @@ int cm_mod(const vector<string>& uStr)
     }
     catch (...)
     {
-        cerr << "INVALID INPUT! FORMAT: maths [add;sub;mult;div;mod;pow] \"num1\" \"num2\"" << '\n';
+        cerr << "INVALID INPUT! FORMAT: maths [+|-|/|;|%|pow] \"num1\" \"num2\"" << '\n';
         return FAILURE;
     }
     

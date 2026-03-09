@@ -25,12 +25,7 @@ Notes:
 ===============================================================================*/
 #include "main.h"
 #include "clengine.h"
-#include <iostream>
-#include <sstream>
-#include <string_view>
-#include <random>
-#include <chrono>
-#include <ctime>
+#include "headers.h"
 
 using namespace std;
 

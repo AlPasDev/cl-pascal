@@ -18,9 +18,7 @@ Notes:
 
 #include "main.h"
 #include "clengine.h"
-#include <iostream>
-#include <string>
-#include <string_view>
+#include "headers.h"
 
 using namespace std;
 
