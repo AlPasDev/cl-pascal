@@ -13,6 +13,7 @@ Assumptions:
      uStr > User String
     
 Notes:
+ TODO: TOP ; Make the maths project full expression aware 1
 ===============================================================================*/
 
 #include "main.h"
@@ -42,12 +43,12 @@ Side Effects:
 --*/
 maths mCmdToEnum(const string_view currentIn)
 {
-    if(currentIn == "add") return maths::MATHS_ADD;
-    if(currentIn == "sub") return maths::MATHS_SUB;
-    if(currentIn == "div") return maths::MATHS_DIV;
-    if(currentIn == "mul") return maths::MATHS_MUL;
+    if(currentIn == "+") return maths::MATHS_ADD;
+    if(currentIn == "-") return maths::MATHS_SUB;
+    if(currentIn == "/") return maths::MATHS_DIV;
+    if(currentIn == "*") return maths::MATHS_MUL;
     if(currentIn == "pow") return maths::MATHS_POW;
-    if(currentIn == "mod") return maths::MATHS_MOD;
+    if(currentIn == "%") return maths::MATHS_MOD;
     
     return maths::MATHS_INV;
 }

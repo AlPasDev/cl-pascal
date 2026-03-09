@@ -29,7 +29,9 @@ Assumptions:
     
 Notes:
     TODO:
-        make token quote aware 1
+        TOP ; Make the maths project full expression aware
+        
+        make token quote aware 3
         run management 3
  
 ===============================================================================*/
