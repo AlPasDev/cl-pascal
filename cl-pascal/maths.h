@@ -4,7 +4,7 @@ Project:     cl-pascal
 Component:   Mathematics Header
 Author:      Alexander Pascal (fryman)
 Created:     2026-02-27
-Last Update: 2026-03-03
+Last Update: 2026-03-10
 Purpose:
     Maths header
 Overview:
@@ -25,5 +25,6 @@ enum class maths
     MATHS_MUL,
     MATHS_POW, //TODO: .
     MATHS_MOD, //TODO: .
+    MATHS_SQRT,
     MATHS_INV
 };

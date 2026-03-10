@@ -4,7 +4,7 @@ Project:     cl-pascal
 Component:   Mathematics util
 Author:      Alexander Pascal (fryman)
 Created:     2026-02-27
-Last Update: 2026-03-03
+Last Update: 2026-03-10
 Purpose:
     Maths functions + control
 Overview:
@@ -25,6 +25,8 @@ Notes:
 
 using namespace std;
 
+string s_mFormat{"FORMAT: maths \"num1\" [add;sub;mult;div;mod;pow] \"num2\""};
+
 /*++
 mCmdToEnum(const string_view currentIn)
 Routine Description:
@@ -42,12 +44,13 @@ Side Effects:
 --*/
 maths mCmdToEnum(const string_view currentIn)
 {
-    if(currentIn == "add") return maths::MATHS_ADD;
-    if(currentIn == "sub") return maths::MATHS_SUB;
-    if(currentIn == "div") return maths::MATHS_DIV;
-    if(currentIn == "mul") return maths::MATHS_MUL;
+    if(currentIn == "+") return maths::MATHS_ADD;
+    if(currentIn == "-") return maths::MATHS_SUB;
+    if(currentIn == "/") return maths::MATHS_DIV;
+    if(currentIn == "*") return maths::MATHS_MUL;
     if(currentIn == "pow") return maths::MATHS_POW;
-    if(currentIn == "mod") return maths::MATHS_MOD;
+    if(currentIn == "%") return maths::MATHS_MOD;
+    if(currentIn == "sqrt") return maths::MATHS_SQRT;
     
     return maths::MATHS_INV;
 }
@@ -62,6 +65,7 @@ bool typeCheck(vector<string> uStr)
         return FAILURE;
 }
 */
+
 /*++
 cm_maths(vector<string> uStr)
 Routine Description:
@@ -72,16 +76,16 @@ Arguments:
     vector<string> uStr ; user string
 Return Value:
     double mResult; ; result for maths
-Side Effects:
+Comments:
 
-    None.
+    Ported feature from cl-math.
 
 --*/
 double cm_maths(const vector<string>& uStr)
 {
     if(uStr.size() > 4 || uStr.size() < 4)
     {
-        cout << "FORMAT: maths [add;sub;mult;div;mod;pow] \"num1\" \"num2\"" << '\n';
+        cout << s_mFormat << '\n';
         return FAILURE;
     }
     
@@ -94,16 +98,16 @@ double cm_maths(const vector<string>& uStr)
     
     try //Try to convert string to double
     {
-        a = stod(uStr[2]);
+        a = stod(uStr[1]);
         b = stod(uStr[3]);
     }
     catch (...)
     {
-        cerr << "INVALID INPUT! FORMAT: maths [add;sub;mult;div;mod;pow] \"num1\" \"num2\"" << '\n';
+        cerr << "INVALID INPUT! " << s_mFormat << '\n';
         return FAILURE;
     }
         
-    switch (mCmdToEnum(uStr[1])) {
+    switch (mCmdToEnum(uStr[2])) {
         case maths::MATHS_ADD:
             mResult = a + b;
             break;
@@ -167,12 +171,12 @@ int cm_mod(const vector<string>& uStr)
     
     try
     {
-        a = stoi(uStr[2]);
+        a = stoi(uStr[1]);
         b = stoi(uStr[3]);
     }
     catch (...)
     {
-        cerr << "INVALID INPUT! FORMAT: maths [add;sub;mult;div;mod;pow] \"num1\" \"num2\"" << '\n';
+        cerr << "INVALID INPUT! " << s_mFormat << '\n';
         return FAILURE;
     }
     
