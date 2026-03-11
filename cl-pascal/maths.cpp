@@ -47,6 +47,7 @@ maths mCmdToEnum(const string_view currentIn)
     if(currentIn == "*") return maths::MATHS_MUL;
     if(currentIn == "pow") return maths::MATHS_POW;
     if(currentIn == "%") return maths::MATHS_MOD;
+    if(currentIn == "sqrt") return maths::MATHS_SQRT;
     
     return maths::MATHS_INV;
 }
@@ -80,9 +81,10 @@ double cm_maths(const vector<string>& uStr)
 {
     if(uStr.size() > 4 || uStr.size() < 4)
     {
-        cout << "FORMAT: maths [+|-|/|;|%|pow] \"num1\" \"num2\"" << '\n';
+        cout << "FORMAT: maths [+|-|/|;|%|pow|sqrt|(|)]" << '\n';
         return FAILURE;
     }
+    
     
   //  if(!typeCheck(uStr))
   //      break;
@@ -98,7 +100,7 @@ double cm_maths(const vector<string>& uStr)
     }
     catch (...)
     {
-        cerr << "INVALID INPUT! FORMAT: maths [+|-|/|;|%|pow] \"num1\" \"num2\"" << '\n';
+        cerr << "INVALID INPUT! FORMAT: maths [+|-|/|;|%|pow|sqrt|(|)]" << '\n';
         return FAILURE;
     }
         
@@ -128,6 +130,10 @@ double cm_maths(const vector<string>& uStr)
             mResult = pow(a, b);
             break;
         
+       // case maths::MATHS_SQRT:
+       //     mathsSqrt(
+        //    break;
+            
         case maths::MATHS_MOD:
             mResult = cm_mod(uStr);
             
@@ -171,7 +177,7 @@ int cm_mod(const vector<string>& uStr)
     }
     catch (...)
     {
-        cerr << "INVALID INPUT! FORMAT: maths [+|-|/|;|%|pow] \"num1\" \"num2\"" << '\n';
+        cerr << "INVALID INPUT! FORMAT: maths [+|-|/|;|%|pow|sqrt|(|)]" << '\n';
         return FAILURE;
     }
     

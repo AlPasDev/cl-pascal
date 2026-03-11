@@ -25,5 +25,19 @@ enum class maths
     MATHS_MUL,
     MATHS_POW, //TODO: .
     MATHS_MOD, //TODO: .
+    MATHS_SQRT,
     MATHS_INV
+};
+
+enum class mTokenType
+{
+    number,
+    plus,
+    minus,
+    star,
+    slash,
+    pow,
+    leftparen,
+    rightparen,
+    end
 };
