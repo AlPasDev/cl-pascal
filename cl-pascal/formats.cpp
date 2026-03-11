@@ -73,7 +73,7 @@ int arg_formatH(const vector<string>& uStr)
     switch(helpToInt(uStr[1]))
     {
         case cformats::CMD_MATHS_H:
-            cout << "FORMAT: maths [add;sub;mult;div] \"num1\" \"num2\"" << '\n';
+            cout << s_mFormat << '\n';
             break;
             
         case cformats::CMD_RANDOM_H:
@@ -81,7 +81,7 @@ int arg_formatH(const vector<string>& uStr)
             break;
         
         case cformats::CMD_ECHO_H:
-            cout << "FORMAT: echo \"phrase\" [repeat-amount]" << '\n';
+            cout << "FORMAT: echo \"phrase\"" << '\n';
             break;
         
         case cformats::ARG_FORMAT_H:
