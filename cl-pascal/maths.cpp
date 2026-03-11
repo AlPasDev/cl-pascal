@@ -25,7 +25,6 @@ Notes:
 
 using namespace std;
 
-string s_mFormat{"FORMAT: maths \"num1\" [add;sub;mult;div;mod;pow] \"num2\""};
 
 /*++
 mCmdToEnum(const string_view currentIn)
@@ -83,6 +82,7 @@ Comments:
 --*/
 double cm_maths(const vector<string>& uStr)
 {
+    fSuccess = true;
     if(uStr.size() > 4 || uStr.size() < 4)
     {
         cout << s_mFormat << '\n';
@@ -92,7 +92,7 @@ double cm_maths(const vector<string>& uStr)
   //  if(!typeCheck(uStr))
   //      break;
 
-    double mResult{0};      // result of maths
+    double mResult{};      // result of maths
     double a{0};            // num1
     double b{0};            // num2
     
@@ -120,6 +120,9 @@ double cm_maths(const vector<string>& uStr)
             if(b == 0)
             {
                 cout << "INVALID: DIVIDE BY ZERO ERROR\n\n";
+                fSuccess = false;
+                return FAILURE;
+                
                 break;
             }
             mResult = a/b;
@@ -141,10 +144,15 @@ double cm_maths(const vector<string>& uStr)
            // break;
             
         default:
+            cout << "Invalid Maths Format. \n";
+            cout << s_mFormat << '\n';
+            fSuccess = false;
+            return FAILURE;
             break;
     }
     
-    return mResult;
+    cout << mResult << '\n';
+    return SUCCESS;
 }
 
 /*++
@@ -177,6 +185,12 @@ int cm_mod(const vector<string>& uStr)
     catch (...)
     {
         cerr << "INVALID INPUT! " << s_mFormat << '\n';
+        return FAILURE;
+    }
+    
+    if(b == 0)
+    {
+        cout << "INVALID: DIVIDE BY ZERO ERROR\n\n";
         return FAILURE;
     }
     

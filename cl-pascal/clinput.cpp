@@ -13,6 +13,7 @@ Assumptions:
      uStr > User String
     
 Notes:
+    Leave for maths project the quoted strings
 ===============================================================================*/
 
 
@@ -44,14 +45,17 @@ Side Effects:
 --*/
 vector<string> sTokenize(string uLine)
 {
-    vector<string> tokens;     //tokens from string
+    vector<string> tokens;     //tokens from string ; array
     istringstream iss(uLine);  //string stream from uLine
+    string current;
+//    bool inQuotes{false}; //TODO: ..quoted..
     
     string word;               //word from tokens
     
     while(iss >> word)
     {
         tokens.push_back(word);
+        
     }
     
     return tokens;

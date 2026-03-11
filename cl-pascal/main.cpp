@@ -118,9 +118,8 @@ int main(int argc, const char * argv[])
 #if defined(__APPLE__)
   //  kill(getpid(), SIGKILL);
     system("osascript -e 'tell application \"Terminal\" to close front window'");
-#elif defined(__WIN32)
+#elif defined(_WIN32)
     system("exit");
-    return EXIT_SUCCESS;
 #endif
-    
+    return EXIT_SUCCESS;
 }

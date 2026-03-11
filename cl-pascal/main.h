@@ -23,14 +23,14 @@ Notes:
 
 //const strings
 constexpr std::string_view CL_NAME{"Pascal Terminal Application"};
-constexpr std::string_view CL_VER{"v1.09m-1130 RC1"};
+constexpr std::string_view CL_VER{"v1.0.11m-1215 RTM"};
 constexpr std::string_view CL_COPYRIGHT{"Copyright (c) 2026, Alexander Pascal"};
 constexpr std::string_view CL_COPYRIGHT2{"Copyright (c) 2026, PascSoft"};
 constexpr std::string_view CL_BRANCH{"main"};
 constexpr std::string_view CL_DEVNAME{"alpascal"};
 constexpr std::string_view CL_BUILDLAB{"MacOS @ Hilton College, South Africa"};
-constexpr std::string_view CL_MILESTONE{"M3 - RC1"};
-
+constexpr std::string_view CL_MILESTONE{"RTM ~ RELEASE"};
+constexpr std::string_view s_mFormat{"FORMAT: maths \"num1\" [add;sub;mult;div;mod;pow] \"num2\""};
 #if defined(_WIN32)
 constexpr std::string_view CL_USEROS{"WIN32 ; Windows"};
 
@@ -49,6 +49,7 @@ constexpr std::string_view CL_USEROS{"UNKNOWN OS NAME"};
 
 constexpr int SUCCESS{0};
 constexpr int FAILURE{1};
+extern bool fSuccess; //little fix for maths func producing error code
 
 //banner/main running func prototypes
 void openBanner();

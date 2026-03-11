@@ -25,6 +25,7 @@ Notes:
 using namespace std;
 
 static vector<string> fStr{}; //Formatted String
+bool fSuccess = true;
 //static double mResult{};      //math result
 
 /*++
@@ -98,10 +99,11 @@ Side Effects:
 --*/
 void cntr_cmd(vector<string> u_ln)
 {
+ //   bool commandFound{false};
     if(u_ln.empty())
         return;
     
-    for(auto& cmd : commandTable)
+    for(const auto& cmd : commandTable)
     {
         if(u_ln[0] == cmd.name)
         {
@@ -109,6 +111,11 @@ void cntr_cmd(vector<string> u_ln)
             return;
         }
     }
+    
+    if(!fSuccess)
+        return;
+    
+    cerr << "ERROR: Command not found. Try again.. \n";
     
 }
 
