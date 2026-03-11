@@ -99,7 +99,7 @@ void cntr_cmd(vector<string> u_ln)
     if(u_ln.empty())
         return;
     
-    for(auto& cmd : commandTable)
+    for(const auto& cmd : commandTable)
     {
         if(u_ln[0] == cmd.name)
         {
@@ -107,6 +107,11 @@ void cntr_cmd(vector<string> u_ln)
             return;
         }
     }
+    
+  //  if(!fSuccess)
+    //    return;
+    
+    cerr << "ERROR: Command not found. Try again.. \n";
     
 }
 

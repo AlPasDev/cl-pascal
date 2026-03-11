@@ -55,7 +55,7 @@ int wrap_maths(const std::vector<std::string>& u_ln)
 {
     if(u_ln.size() < 4)
     {
-        std::cerr << "Incorrect Usage: maths <add|sub|mul|div> a b " << '\n';
+        std::cerr << s_mFormat << '\n';
         return FAILURE;
     }
     

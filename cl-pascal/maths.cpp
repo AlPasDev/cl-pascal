@@ -81,7 +81,7 @@ double cm_maths(const vector<string>& uStr)
 {
     if(uStr.size() > 4 || uStr.size() < 4)
     {
-        cout << "FORMAT: maths [+|-|/|;|%|pow|sqrt|(|)]" << '\n';
+        cout << s_mFormat << '\n';
         return FAILURE;
     }
     
@@ -100,7 +100,7 @@ double cm_maths(const vector<string>& uStr)
     }
     catch (...)
     {
-        cerr << "INVALID INPUT! FORMAT: maths [+|-|/|;|%|pow|sqrt|(|)]" << '\n';
+        cerr << "INVALID INPUT! " << s_mFormat << '\n';
         return FAILURE;
     }
         
@@ -177,7 +177,7 @@ int cm_mod(const vector<string>& uStr)
     }
     catch (...)
     {
-        cerr << "INVALID INPUT! FORMAT: maths [+|-|/|;|%|pow|sqrt|(|)]" << '\n';
+        cerr << "INVALID INPUT!" << s_mFormat << '\n';
         return FAILURE;
     }
     

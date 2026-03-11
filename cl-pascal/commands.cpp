@@ -35,7 +35,7 @@ constexpr string_view CL_COMMANDLIST
 {
     "help       < Prints the help menu, i.e. this one.\n"
     "about      < Prints the about/version screen\n"
-    "maths      < \"maths [add;sub;mult;div] num1 num2\": maths functions for calculations\n"
+    "maths      < \"maths [+|-|/|*|pow|sqr]\": maths functions for calculations\n"
     "rand       < \"rand [min-range] [max-range]\"        Produces some random numbers from a set range\n"
     "echo       < echo \"phrase\" [repeat-amount]         duplicates the inputted text \n"
     "time       < Shows the current date&time \n"

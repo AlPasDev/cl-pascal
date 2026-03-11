@@ -31,7 +31,7 @@ cformats helpToInt(const string_view currentIn)
     if(currentIn == "help") return cformats::CMD_HELP_H;
     if(currentIn == "maths") return cformats::CMD_MATHS_H;
     if(currentIn == "rand") return cformats::CMD_RANDOM_H;
-    if(currentIn == "repeat") return cformats::CMD_ECHO_H;
+    if(currentIn == "echo") return cformats::CMD_ECHO_H;
     if(currentIn == "devinfo") return cformats::CMD_DEVINFO_H;
     if(currentIn == "about") return cformats::CMD_ABOUT_H;
     if(currentIn == "clear") return cformats::CMD_CLR_H;
@@ -68,7 +68,7 @@ int arg_formatH(const vector<string>& uStr)
     switch(helpToInt(uStr[1]))
     {
         case cformats::CMD_MATHS_H:
-            cout << "FORMAT: maths [+|-|/|;|%|pow] \"num1\" \"num2\"" << '\n';
+            cout << s_mFormat << '\n';
             break;
             
         case cformats::CMD_RANDOM_H:

@@ -30,6 +30,7 @@ constexpr std::string_view CL_BRANCH{"cl-math"};
 constexpr std::string_view CL_DEVNAME{"alpascal"};
 constexpr std::string_view CL_BUILDLAB{"MacOS @ Hilton College, South Africa"};
 constexpr std::string_view CL_MILESTONE{"M1"};
+constexpr std::string_view s_mFormat{"FORMAT: maths [+|-|/|;|%|pow]"};
 
 #if defined(_WIN32)
 constexpr std::string_view CL_USEROS{"WIN32 ; Windows"};
