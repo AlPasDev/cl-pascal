@@ -46,6 +46,7 @@ command commandTable[]
     {"devinfo", wrap_devinfo},
     {"time", wrap_time},
     {"developer", wrap_devinfo},
+    {"new", wrap_new},
     {"about", wrap_about},
     {"clear", wrap_clear},
     {"quit", wrap_quit},

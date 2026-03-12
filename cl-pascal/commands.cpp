@@ -31,6 +31,7 @@ constexpr string_view CL_COMMANDLIST
 {
     "help       < Prints the help menu, i.e. this one.\n"
     "about      < Prints the about/version screen\n"
+    "new        < Prints what's new in this version\n"
     "maths      < maths [+|-|/|*|pow|sqr]:                                    maths functions for calculations\n"
     "rand       < rand [min-range] [max-range] [gen amount] [generator type]: Produces random nums from range. /f the command for types.\n"
     "echo       < echo \"phrase\" [repeat-amount]:                            duplicates the inputted text \n"
@@ -258,6 +259,38 @@ int cm_about()
 }
 
 /*++
+cm_newFeats()
+Routine Description:
+
+    new features ~ command;
+
+Arguments:
+     
+Return Value:
+    SUCCESS ; int
+Side Effects:
+
+    None.
+
+--*/
+int cm_newFeats()
+{
+    cout << "=======================================================================\n"
+         << "Version: "
+         << CL_VER << " - Pre-Release"<<'\n'
+         << "What's New?:          \n "
+         << "- created options for rand command.\n"
+         << "- Added symbol control for maths (ported to rtm).\n"
+         << "- Added a what's new menu.\n"
+         << "\n\n\n"
+         << "\"/?\" or \"help\" for help" << '\n'
+         << "=======================================================================\n";
+    
+    
+    return SUCCESS;
+}
+
+/*++
 cm_devInfo()
 Routine Description:
 
@@ -339,3 +372,4 @@ int cm_echo(const vector<string>& uStr) //TODO: ...
 
     return SUCCESS;
 }
+

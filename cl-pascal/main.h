@@ -21,7 +21,7 @@ Notes:
 
 //const strings
 constexpr std::string_view CL_NAME{"Pascal Terminal Application"};
-constexpr std::string_view CL_VER{"v1.12m-2312 M1"};
+constexpr std::string_view CL_VER{"v1.13m-0030 M1"};
 constexpr std::string_view CL_COPYRIGHT{"Copyright (c) 2026, Alexander Pascal"};
 constexpr std::string_view CL_COPYRIGHT2{"Copyright (c) 2026, PascSoft"};
 constexpr std::string_view CL_BRANCH{"cl-math"};
@@ -67,6 +67,7 @@ int cm_clear();
 int cm_about();
 int cm_time();
 int cm_echo(const std::vector<std::string>& uStr);
+int cm_newFeats();
 int cm_devInfo();
 bool cm_quit();
 int arg_formatH(const std::vector<std::string>& uStr);
