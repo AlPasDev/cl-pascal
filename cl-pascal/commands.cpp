@@ -20,6 +20,7 @@ Overview:
              f <command>
              /? or ?
              devinfo
+TODO:        bugfix
              
 Assumptions:
 Notes:
@@ -37,7 +38,7 @@ constexpr string_view CL_COMMANDLIST
     "help       < Prints the help menu, i.e. this one.\n"
     "about      < Prints the about/version screen\n"
     "new        < Prints what's new in this version\n"
-    "maths      < maths [+|-|/|*|pow|sqr]: maths functions for calculations\n"
+    "maths      < maths [+|-|/|*|pow|sqr]: maths functions for calculations <under construction>\n"
     "rand       < rand [min-range] [max-range] [gen amount] [generator type]\n"
     "             Produces random nums from range. /f the command for types.\n"
     "echo       < echo \"phrase\" [repeat-amount]\n"
@@ -48,6 +49,7 @@ constexpr string_view CL_COMMANDLIST
     "\n\n/f <command>     < Shows the format for each command\n"
     "/? or ?          < Prints the help menu, i.e. this one.\n"
     "devinfo          < Prints the developer info/debug screen\n"
+    "bugfix           < reporting issues & feature requests <under construction>\n"
 };
 
 /*++
@@ -146,36 +148,36 @@ int cm_random(const vector<string>& uStr)
         switch (optToRNG(uStr[4])) {
             case RNG::opt_mt19937:
                 
-                static mt19937 genM(rd());
-                cout << dist(genM);
+                static mt19937 gen_mt19937(rd());
+                cout << dist(gen_mt19937);
 
                 break;
                 
             case RNG::opt_default:
                 
-                static default_random_engine genD(rd());
-                cout << dist(genD);
+                static default_random_engine gen_default_random_engine(rd());
+                cout << dist(gen_default_random_engine);
 
                 break;
                 
             case RNG::opt_ranlux24:
                 
-                static ranlux24 genR(rd());
-                cout << dist(genR);
+                static ranlux24 gen_ranlux24(rd());
+                cout << dist(gen_ranlux24);
 
                 break;
                 
             case RNG::opt_knuth_b:
                 
-                static knuth_b genK(rd());
-                cout << dist(genK);
+                static knuth_b gen_knuth_b(rd());
+                cout << dist(gen_knuth_b);
 
                 break;
                 
             case RNG::opt_minstd_rand:
                 
-                static minstd_rand genMi(rd());
-                cout << dist(genMi);
+                static minstd_rand gen_minstd_rand(rd());
+                cout << dist(gen_minstd_rand);
                 
                 break;
                 
@@ -265,6 +267,7 @@ int cm_about()
     return SUCCESS;
 }
 
+
 /*++
 cm_newFeats()
 Routine Description:
@@ -286,9 +289,10 @@ int cm_newFeats()
          << "Version: "
          << CL_VER << " - Pre-Release"<<'\n'
          << "What's New?:          \n"
-         << "- created options for rand command.\n"
+         << "- Added options for rand command.\n"
          << "- Added symbol control for maths (ported to rtm).\n"
          << "- Added a what's new menu.\n"
+         << "- Added bugfix ; Alpha for error reporting.\n"
          << "\n\n\n"
          << "Type \"bugfix\" for reporting issues & feature requests." << '\n'
          << "\"/?\" or \"help\" for help" << '\n'

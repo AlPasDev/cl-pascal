@@ -23,6 +23,11 @@ int wrap_help(const std::vector<std::string>&)
     return cm_help();
 }
 
+int wrap_bugfix(const std::vector<std::string>&)
+{
+    return cm_bugfix();
+}
+
 int wrap_about(const std::vector<std::string>&)
 {
     return cm_about();

@@ -21,7 +21,7 @@ Notes:
 
 //const strings
 constexpr std::string_view CL_NAME{"Pascal Terminal Application"};
-constexpr std::string_view CL_VER{"v1.13m-0030 M1"};
+constexpr std::string_view CL_VER{"v1.13m-0112 M1"};
 constexpr std::string_view CL_COPYRIGHT{"Copyright (c) 2026, Alexander Pascal"};
 constexpr std::string_view CL_COPYRIGHT2{"Copyright (c) 2026, PascSoft"};
 constexpr std::string_view CL_BRANCH{"cl-math"};
@@ -75,3 +75,6 @@ int arg_formatH(const std::vector<std::string>& uStr);
 //maths func prototypes
 double cm_maths(const std::vector<std::string>& uStr);
 int cm_mod(const std::vector<std::string>& uStr);
+
+//bugfix func prototypes
+int cm_bugfix();

@@ -44,6 +44,7 @@ command commandTable[]
     {"rand", cm_random},
     {"echo", cm_echo},
     {"devinfo", wrap_devinfo},
+    {"bugfix", wrap_bugfix},
     {"time", wrap_time},
     {"developer", wrap_devinfo},
     {"new", wrap_new},
