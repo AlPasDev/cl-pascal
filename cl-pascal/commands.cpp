@@ -130,52 +130,56 @@ int cm_random(const vector<string>& uStr)
         return FAILURE;
     }
     
+    static random_device rd;
+    uniform_int_distribution<> dist(min, max);
+    
     for(int i{0}; i < gen_amt; ++i)
     {
-        static random_device rd;
-        uniform_int_distribution<> dist(min, max);
-        
         switch (optToRNG(uStr[4])) {
             case RNG::opt_mt19937:
                 
                 static mt19937 genM(rd());
-                cout << dist(genM) << " ";
+                cout << dist(genM);
 
                 break;
                 
             case RNG::opt_default:
                 
                 static default_random_engine genD(rd());
-                cout << dist(genD) << " ";
+                cout << dist(genD);
 
                 break;
                 
             case RNG::opt_ranlux24:
                 
                 static ranlux24 genR(rd());
-                cout << dist(genR) << " ";
+                cout << dist(genR);
 
                 break;
                 
             case RNG::opt_knuth_b:
                 
                 static knuth_b genK(rd());
-                cout << dist(genK) << " ";
+                cout << dist(genK);
 
                 break;
                 
             case RNG::opt_minstd_rand:
                 
                 static minstd_rand genMi(rd());
-                cout << dist(genMi)  << " ";
+                cout << dist(genMi);
                 
                 break;
                 
             default:
+                cerr << "INVALID RNG OPTION" << '\n';
                 break;
         }
         
-        if(i % 10 == 0)
+        if(i != gen_amt - 1)
+            cout << ' ';
+        
+        if((i + 1) % 10 == 0)
             cout << '\n';
         
     }
