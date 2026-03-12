@@ -4,7 +4,7 @@ Project:     cl-pascal
 Component:   wrapper functions for cmd dispatch
 Author:      Alexander Pascal (fryman)
 Created:     2026-03-09
-Last Update: 2026-03-09
+Last Update: 2026-03-13
 Purpose:
              /f command
 Overview:

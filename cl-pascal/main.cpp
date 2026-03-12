@@ -4,7 +4,8 @@ Project:      cl-pascal
 Component:    Main util
 Author:       Alexander Pascal (fryman)
 Created:      2026-02-25
-Last Update:  2026-03-05
+Last Update:  2026-03-13
+Version:      M1
 Purpose:
               main file
 Overview:
@@ -27,7 +28,7 @@ Notes:
               
 TODO:         TOP ; Make the maths project full expression aware 0
 TODO:         make token quote aware 3
-TODO:         make options for rng 1
+TODO:         bugfix ~ Option for bug reporting/feature req 1
 =================================================================================*/
 
 #include "main.h"

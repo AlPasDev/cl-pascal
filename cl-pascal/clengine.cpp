@@ -4,7 +4,7 @@ Project:     cl-pascal
 Component:   CL Engine util
 Author:      Alexander Pascal (fryman)
 Created:     2026-02-27
-Last Update: 2026-03-03
+Last Update: 2026-03-13
 Purpose:
              Command Line engine + Dispatch for commands
 Overview:

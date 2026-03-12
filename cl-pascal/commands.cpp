@@ -4,18 +4,23 @@ Project:     cl-pascal
 Component:   command runner
 Author:      Alexander Pascal (fryman)
 Created:     2026-02-25
-Last Update: 2026-03-05
+Last Update: 2026-03-13
 Purpose:
              functions for each command
 Overview:
-             help or /?
+             help
              about
+             new
              maths
-             random
-             repeat
+             rand
+             echo
+             time
              clear
              quit
-             /f [command]
+             f <command>
+             /? or ?
+             devinfo
+             
 Assumptions:
 Notes:
 ===============================================================================*/
@@ -32,9 +37,11 @@ constexpr string_view CL_COMMANDLIST
     "help       < Prints the help menu, i.e. this one.\n"
     "about      < Prints the about/version screen\n"
     "new        < Prints what's new in this version\n"
-    "maths      < maths [+|-|/|*|pow|sqr]:                                    maths functions for calculations\n"
-    "rand       < rand [min-range] [max-range] [gen amount] [generator type]: Produces random nums from range. /f the command for types.\n"
-    "echo       < echo \"phrase\" [repeat-amount]:                            duplicates the inputted text \n"
+    "maths      < maths [+|-|/|*|pow|sqr]: maths functions for calculations\n"
+    "rand       < rand [min-range] [max-range] [gen amount] [generator type]\n"
+    "             Produces random nums from range. /f the command for types.\n"
+    "echo       < echo \"phrase\" [repeat-amount]\n"
+    "             duplicates the inputted text \n"
     "time       < Shows the current date&time \n"
     "clear      < Clears the screen\n"
     "quit       < quits the application\n"
@@ -278,11 +285,12 @@ int cm_newFeats()
     cout << "=======================================================================\n"
          << "Version: "
          << CL_VER << " - Pre-Release"<<'\n'
-         << "What's New?:          \n "
+         << "What's New?:          \n"
          << "- created options for rand command.\n"
          << "- Added symbol control for maths (ported to rtm).\n"
          << "- Added a what's new menu.\n"
          << "\n\n\n"
+         << "Type \"bugfix\" for reporting issues & feature requests." << '\n'
          << "\"/?\" or \"help\" for help" << '\n'
          << "=======================================================================\n";
     
