@@ -1,9 +1,19 @@
-//
-//  formats.cpp
-//  cl-pascal
-//
-//  Created by Alex Pascal on 2026/03/09.
-//
+/*===============================================================================
+File:        formats.cpp
+Project:     cl-pascal
+Component:   wrapper functions for cmd dispatch
+Author:      Alexander Pascal (fryman)
+Created:     2026-03-09
+Last Update: 2026-03-09
+Purpose:
+    /f command
+Overview:
+     
+Assumptions:
+     uStr > User String
+    
+Notes:
+=================================================================================*/
 #include "main.h"
 #include "clengine.h"
 #include "headers.h"
@@ -60,26 +70,32 @@ Side Effects:
 --*/
 int arg_formatH(const vector<string>& uStr)
 {
+    
     if(uStr.size() > 2 || uStr.size() < 2)
     {
         cout << "FORMAT: /f <command> " << '\n';
         return FAILURE;
     }
+    
     switch(helpToInt(uStr[1]))
     {
         case cformats::CMD_MATHS_H:
+            
             cout << s_mFormat << '\n';
             break;
             
         case cformats::CMD_RANDOM_H:
+            
             cout << "FORMAT: rand [min-range] [max-range]" << '\n';
             break;
         
         case cformats::CMD_ECHO_H:
+            
             cout << "FORMAT: echo \"phrase\" [repeat-amount]" << '\n';
             break;
         
         case cformats::ARG_FORMAT_H:
+            
             cout << "FORMAT: /f <command>" << '\n';
             break;
             
@@ -89,10 +105,12 @@ int arg_formatH(const vector<string>& uStr)
         case cformats::CMD_TIME_H:
         case cformats::CMD_CLR_H:
         case cformats::CMD_DEVINFO_H:
+            
             cout << "NO ARGUMENTS FOR COMMAND.\n";
             break;
         
         default:
+            
             cout << "INVALID COMMAND!" << '\n';
             break;
             
