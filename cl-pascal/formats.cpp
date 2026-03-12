@@ -6,12 +6,9 @@ Author:      Alexander Pascal (fryman)
 Created:     2026-03-09
 Last Update: 2026-03-09
 Purpose:
-    /f command
+             /f command
 Overview:
-     
 Assumptions:
-     uStr > User String
-    
 Notes:
 =================================================================================*/
 #include "main.h"
@@ -73,7 +70,7 @@ int arg_formatH(const vector<string>& uStr)
     
     if(uStr.size() > 2 || uStr.size() < 2)
     {
-        cout << "FORMAT: /f <command> " << '\n';
+        cout << "FORMAT: /f <command> " << '\n' << '\n';
         return FAILURE;
     }
     
@@ -86,7 +83,14 @@ int arg_formatH(const vector<string>& uStr)
             
         case cformats::CMD_RANDOM_H:
             
-            cout << "FORMAT: rand [min-range] [max-range]" << '\n';
+            cout << s_rFormat << '\n' << '\n'
+                 << "Generator Types:\t\n\n\n"
+                 << "lcg         | Linear congruential generator\n"
+                 << "mt          | Mersenne Twister\n"
+                 << "s&c         | Subtract and carry\n"
+                 << "slcg        | Shuffled linear congruential generator\n"
+                 << "default     | randomly selected.\n"
+                 << "Leave Empty for the default generator.\n";
             break;
         
         case cformats::CMD_ECHO_H:

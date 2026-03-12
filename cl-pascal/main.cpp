@@ -1,40 +1,34 @@
 /*===============================================================================
-File:        main.cpp
-Project:     cl-pascal
-Component:   Main util
-Author:      Alexander Pascal (fryman)
-Created:     2026-02-25
-Last Update: 2026-03-05
+File:         main.cpp
+Project:      cl-pascal
+Component:    Main util
+Author:       Alexander Pascal (fryman)
+Created:      2026-02-25
+Last Update:  2026-03-05
 Purpose:
-    main file
+              main file
 Overview:
-     Build a program that behaves like a small terminal.
-     Example:
+              Build a program that behaves like a small terminal.
+              Example:
 
-     > help
-     > maths add 5 7
-     > random
-     > quit
- 
-     Program runs in a loop and interprets commands.
-     Requirements:
- 
-     infinite loop until quit
-     read full line input
-     if / else command parsing
-     functions per command
-
-Assumptions:
-     uStr > User String 
-    
+              > help
+              > maths add 5 7
+              > random
+              > quit
+         
+              Program runs in a loop and interprets commands.
+              Requirements:
+         
+              infinite loop until quit
+              read full line input
+              if / else command parsing
+              functions per command
 Notes:
-    TODO:
-        TOP ; Make the maths project full expression aware
-        
-        make token quote aware 3
-        run management 3
- 
-===============================================================================*/
+              
+TODO:         TOP ; Make the maths project full expression aware 0
+TODO:         make token quote aware 3
+TODO:         make options for rng 1
+=================================================================================*/
 
 #include "main.h"
 #include "clengine.h"

@@ -6,22 +6,18 @@ Author:      Alexander Pascal (fryman)
 Created:     2026-02-25
 Last Update: 2026-03-05
 Purpose:
-     functions for each command
+             functions for each command
 Overview:
- 
-     help or /?
-     about
-     maths
-     random
-     repeat
-     clear
-     quit
-     /f [command]
-
+             help or /?
+             about
+             maths
+             random
+             repeat
+             clear
+             quit
+             /f [command]
 Assumptions:
-    
 Notes:
-    
 ===============================================================================*/
 #include "main.h"
 #include "clengine.h"
@@ -35,14 +31,14 @@ constexpr string_view CL_COMMANDLIST
 {
     "help       < Prints the help menu, i.e. this one.\n"
     "about      < Prints the about/version screen\n"
-    "maths      < \"maths [+|-|/|*|pow|sqr]\": maths functions for calculations\n"
-    "rand       < \"rand [min-range] [max-range]\"        Produces some random numbers from a set range\n"
-    "echo       < echo \"phrase\" [repeat-amount]         duplicates the inputted text \n"
+    "maths      < maths [+|-|/|*|pow|sqr]:                                    maths functions for calculations\n"
+    "rand       < rand [min-range] [max-range] [gen amount] [generator type]: Produces random nums from range. /f the command for types.\n"
+    "echo       < echo \"phrase\" [repeat-amount]:                            duplicates the inputted text \n"
     "time       < Shows the current date&time \n"
     "clear      < Clears the screen\n"
     "quit       < quits the application\n"
     "\n\n/f <command>     < Shows the format for each command\n"
-    "/?               < Prints the help menu, i.e. this one.\n"
+    "/? or ?          < Prints the help menu, i.e. this one.\n"
     "devinfo          < Prints the developer info/debug screen\n"
 };
 
@@ -73,6 +69,20 @@ int cm_help()
     return SUCCESS;
 }
 
+RNG optToRNG(const string_view cIn)
+{
+    if(cIn == "lcg") return RNG::opt_minstd_rand;
+    if(cIn == "mt") return RNG::opt_mt19937;
+    if(cIn == "s&c") return RNG::opt_ranlux24;
+    if(cIn == "slcg") return RNG::opt_knuth_b;
+    if(cIn == "default") return RNG::opt_default;
+    if(cIn == "\n") return RNG::opt_default;
+    if(cIn == " ") return RNG::opt_default;
+    
+    return RNG::opt_default;
+}
+
+
 /*++
 cm_random(vector<string> uStr)
 Routine Description:
@@ -83,26 +93,30 @@ Arguments:
      
 Return Value:
     SUCCESS
-Side Effects:
-
-    None.
-
+Notes:
+    minstd_rand
+    mt19937
+    ranlux24
+    knuth_b
+    default
 --*/
 int cm_random(const vector<string>& uStr)
 {
-    if(uStr.size() > 3 || uStr.size() < 3)
+    if(uStr.size() != 5)
     {
-        cout << "FORMAT: rand [min-range] [max-range]" << '\n';
+        cout << s_rFormat << '\n';
         return FAILURE;
     }
     
-    int min{};
-    int max{};
+    int min{};        //min range
+    int max{};        //max range
+    int gen_amt{};    //gen amount
     
     try
     {
         min = stoi(uStr[1]);
         max = stoi(uStr[2]);
+        gen_amt = stoi(uStr[3]);
     }
     catch (...)
     {
@@ -116,12 +130,56 @@ int cm_random(const vector<string>& uStr)
         return FAILURE;
     }
     
-    static random_device rd;
-    static mt19937 gen(rd());
-    uniform_int_distribution<> dist(min, max);
-    
-    cout << dist(gen) << '\n';
-    
+    for(int i{0}; i < gen_amt; ++i)
+    {
+        static random_device rd;
+        uniform_int_distribution<> dist(min, max);
+        
+        switch (optToRNG(uStr[4])) {
+            case RNG::opt_mt19937:
+                
+                static mt19937 genM(rd());
+                cout << dist(genM) << " ";
+
+                break;
+                
+            case RNG::opt_default:
+                
+                static default_random_engine genD(rd());
+                cout << dist(genD) << " ";
+
+                break;
+                
+            case RNG::opt_ranlux24:
+                
+                static ranlux24 genR(rd());
+                cout << dist(genR) << " ";
+
+                break;
+                
+            case RNG::opt_knuth_b:
+                
+                static knuth_b genK(rd());
+                cout << dist(genK) << " ";
+
+                break;
+                
+            case RNG::opt_minstd_rand:
+                
+                static minstd_rand genMi(rd());
+                cout << dist(genMi)  << " ";
+                
+                break;
+                
+            default:
+                break;
+        }
+        
+        if(i % 10 == 0)
+            cout << '\n';
+        
+    }
+    cout << '\n';
     return SUCCESS;
 }
 

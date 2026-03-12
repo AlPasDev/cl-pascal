@@ -6,14 +6,11 @@ Author:      Alexander Pascal (fryman)
 Created:     2026-02-27
 Last Update: 2026-03-03
 Purpose:
-    Maths header
+             Maths header
 Overview:
-     
 Assumptions:
-     uStr > User String
-    
 Notes:
- TODO: TOP ; Make the maths project full expression aware
+             TODO: TOP ; Make the maths project full expression aware
 ===============================================================================*/
 
 

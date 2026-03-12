@@ -6,12 +6,9 @@ Author:      Alexander Pascal (fryman)
 Created:     2026-03-09
 Last Update: 2026-03-09
 Purpose:
-    wrapper header
+             wrapper header
 Overview:
-     
 Assumptions:
-     uStr > User String
-    
 Notes:
 =================================================================================*/
 

@@ -6,14 +6,10 @@ Author:      Alexander Pascal (fryman)
 Created:     2026-02-27
 Last Update: 2026-03-03
 Purpose:
-    Command Line engine + Dispatch for commands
+             Command Line engine + Dispatch for commands
 Overview:
-     
 Assumptions:
-     uStr > User String
-    
 Notes:
-    
 ===============================================================================*/
 
 #include "main.h"
@@ -55,7 +51,8 @@ command commandTable[]
     {"quit", wrap_quit},
     {"exit", wrap_quit},
     {"/f", arg_formatH},
-    {"/?", wrap_help}
+    {"/?", wrap_help},
+    {"?", wrap_help}
 };
 
 /*++

@@ -6,11 +6,9 @@ Author:      Alexander Pascal (fryman)
 Created:     2026-02-27
 Last Update: 2026-03-03
 Purpose:
-    main header file
+             main header file
 Overview:
 Assumptions:
-     uStr > User String
- 
 Notes:
 =================================================================================*/
 
@@ -23,7 +21,7 @@ Notes:
 
 //const strings
 constexpr std::string_view CL_NAME{"Pascal Terminal Application"};
-constexpr std::string_view CL_VER{"v1.10m-1200 M1"};
+constexpr std::string_view CL_VER{"v1.12m-2312 M1"};
 constexpr std::string_view CL_COPYRIGHT{"Copyright (c) 2026, Alexander Pascal"};
 constexpr std::string_view CL_COPYRIGHT2{"Copyright (c) 2026, PascSoft"};
 constexpr std::string_view CL_BRANCH{"cl-math"};
@@ -31,6 +29,7 @@ constexpr std::string_view CL_DEVNAME{"alpascal"};
 constexpr std::string_view CL_BUILDLAB{"MacOS @ Hilton College, South Africa"};
 constexpr std::string_view CL_MILESTONE{"M1"};
 constexpr std::string_view s_mFormat{"FORMAT: maths [+|-|/|;|%|pow]"};
+constexpr std::string_view s_rFormat{"FORMAT: rand [min-range] [max-range] [gen amount] [generator type]"};
 
 #if defined(_WIN32)
 constexpr std::string_view CL_USEROS{"WIN32 ; Windows"};

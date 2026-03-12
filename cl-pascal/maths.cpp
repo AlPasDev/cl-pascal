@@ -6,14 +6,9 @@ Author:      Alexander Pascal (fryman)
 Created:     2026-02-27
 Last Update: 2026-03-03
 Purpose:
-    Maths functions + control
+             Maths functions + control
 Overview:
-     
-Assumptions:
-     uStr > User String
-    
-Notes:
- TODO: TOP ; Make the maths project full expression aware 1
+Notes:       TODO: TOP ; Make the maths project full expression aware 1
 ===============================================================================*/
 
 #include "main.h"

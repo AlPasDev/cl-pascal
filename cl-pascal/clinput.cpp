@@ -6,12 +6,9 @@ Author:      Alexander Pascal (fryman)
 Created:     2026-02-27
 Last Update: 2026-03-03
 Purpose:
-    Input control
+             Input control
 Overview:
-     
 Assumptions:
-     uStr > User String
-    
 Notes:
 ===============================================================================*/
 

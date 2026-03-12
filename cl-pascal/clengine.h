@@ -40,3 +40,12 @@ enum class cformats
     CMD_DEVINFO_H,
     CMD_INVALID_H
 };
+
+enum class RNG
+{
+    opt_minstd_rand,
+    opt_mt19937,
+    opt_ranlux24,
+    opt_knuth_b,
+    opt_default
+};
