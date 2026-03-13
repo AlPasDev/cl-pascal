@@ -19,9 +19,18 @@ Notes:
 #include <string>
 #include <vector>
 
+#ifndef FLAGS_H
+#define FLAGS_H
+
+extern bool isBugFixActive;
+
+#endif
+
 //const strings
 constexpr std::string_view CL_NAME{"Pascal Terminal Application"};
-constexpr std::string_view CL_VER{"v1.13m-0112 M1"};
+extern std::string CL_VER;
+constexpr std::string VERPREFIX{"v1.13m"};
+constexpr std::string VERSUFFIX{"M1"};
 constexpr std::string_view CL_COPYRIGHT{"Copyright (c) 2026, Alexander Pascal"};
 constexpr std::string_view CL_COPYRIGHT2{"Copyright (c) 2026, PascSoft"};
 constexpr std::string_view CL_BRANCH{"cl-math"};
@@ -53,6 +62,7 @@ constexpr int FAILURE{1};
 //banner/main running func prototypes
 void openBanner();
 void exitMsg();
+void cl_prompt();
 
 //input function prototypes
 std::vector<std::string> sTokenize(std::string uLine);
@@ -77,4 +87,8 @@ double cm_maths(const std::vector<std::string>& uStr);
 int cm_mod(const std::vector<std::string>& uStr);
 
 //bugfix func prototypes
-int cm_bugfix();
+void cm_bugfix_out();
+std::vector<std::string> bugfix_tokenizer(std::string u_bIn);
+void bugfix_select();
+int bugfix_main();
+int bugfix_log();

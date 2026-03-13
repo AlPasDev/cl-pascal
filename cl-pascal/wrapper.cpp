@@ -25,7 +25,7 @@ int wrap_help(const std::vector<std::string>&)
 
 int wrap_bugfix(const std::vector<std::string>&)
 {
-    return cm_bugfix();
+    return bugfix_main();
 }
 
 int wrap_about(const std::vector<std::string>&)

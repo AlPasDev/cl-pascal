@@ -19,6 +19,7 @@ Notes:
 using namespace std;
 
 static vector<string> fStr{}; //Formatted String
+bool isBugFixActive{false};
 //static double mResult{};      //math result
 
 /*++
@@ -169,8 +170,7 @@ NEWLINE:
     fStr = sTokenize(uStr);
 
     cntr_cmd(fStr);
-    
-    
+        
     return true;
 }
 

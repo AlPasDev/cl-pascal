@@ -9,33 +9,33 @@ Version:      M1
 Purpose:
               main file
 Overview:
-              Build a program that behaves like a small terminal.
-              Example:
-
-              > help
-              > maths add 5 7
-              > random
-              > quit
-         
-              Program runs in a loop and interprets commands.
-              Requirements:
-         
-              infinite loop until quit
-              read full line input
-              if / else command parsing
-              functions per command
+              Terminal Applet
 Notes:
               
 TODO:         TOP ; Make the maths project full expression aware 0
 TODO:         make token quote aware 3
-TODO:         bugfix ~ Option for bug reporting/feature req 1
-=================================================================================*/
+================================================================================*/
 
 #include "main.h"
 #include "clengine.h"
 #include "headers.h"
 
+std::string CL_VER{""};
+
 using namespace std;
+
+constexpr char build_HHMM[] =
+{
+    __TIME__[0],
+    __TIME__[1],
+    __TIME__[3],
+    __TIME__[4],
+};
+
+void getBuildNum()
+{
+        CL_VER = VERPREFIX + "-" + build_HHMM + " " + VERSUFFIX;
+}
 
 
 /*++
@@ -63,6 +63,8 @@ void openBanner()
          << "\"devinfo\" for developer/debug info" << '\n'
          << "=======================================================================\n";
 }
+
+
 
 /*++
 exitMsg()
@@ -100,6 +102,7 @@ Side Effects:
 --*/
 int main(int argc, const char * argv[])
 {
+    getBuildNum();
 #if DEBUG
     std::cout << "Executable path: " << argv[0] << '\n';
 #endif
