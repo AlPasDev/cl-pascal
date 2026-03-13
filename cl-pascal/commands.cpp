@@ -140,12 +140,14 @@ int cm_random(const vector<string>& uStr)
         return FAILURE;
     }
     
+    RNG opt = optToRNG(uStr[4]);
+        
     static random_device rd;
     uniform_int_distribution<> dist(min, max);
     
     for(int i{0}; i < gen_amt; ++i)
     {
-        switch (optToRNG(uStr[4])) {
+        switch (opt) {
             case RNG::opt_mt19937:
                 
                 static mt19937 gen_mt19937(rd());
