@@ -29,7 +29,7 @@ extern bool isBugFixActive;
 //const strings
 constexpr std::string_view CL_NAME{"Pascal Terminal Application"};
 extern std::string CL_VER;
-constexpr std::string VERPREFIX{"v1.13m"};
+constexpr std::string VERPREFIX{"v1.18m"};
 constexpr std::string VERSUFFIX{"M1"};
 constexpr std::string_view CL_COPYRIGHT{"Copyright (c) 2026, Alexander Pascal"};
 constexpr std::string_view CL_COPYRIGHT2{"Copyright (c) 2026, PascSoft"};
@@ -90,5 +90,8 @@ int cm_mod(const std::vector<std::string>& uStr);
 void cm_bugfix_out();
 std::vector<std::string> bugfix_tokenizer(std::string u_bIn);
 void bugfix_select();
-int bugfix_main();
+int bugfix_main(const std::vector<std::string>& uStr);
 int bugfix_log();
+int bugfix_read();
+
+

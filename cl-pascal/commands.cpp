@@ -37,6 +37,7 @@ constexpr string_view CL_COMMANDLIST
 {
     "help       < Prints the help menu, i.e. this one.\n"
     "about      < Prints the about/version screen\n"
+//    "tabout     < Pop-ups the about/version screen\n"
     "new        < Prints what's new in this version\n"
     "maths      < maths [+|-|/|*|pow|sqr]: maths functions for calculations <under construction>\n"
     "rand       < rand [min-range] [max-range] [gen amount] [generator type]\n"
@@ -50,6 +51,7 @@ constexpr string_view CL_COMMANDLIST
     "/? or ?          < Prints the help menu, i.e. this one.\n"
     "devinfo          < Prints the developer info/debug screen\n"
     "bugfix           < reporting issues & feature requests <under construction>\n"
+    "                 < /r to read history of bugfix.\n"
 };
 
 /*++
@@ -295,6 +297,7 @@ int cm_newFeats()
          << "- Added symbol control for maths (ported to rtm).\n"
          << "- Added a what's new menu.\n"
          << "- Added bugfix ; Alpha for error reporting.\n"
+         << "- Added about popup on quit.\n"
          << "\n\n\n"
          << "Type \"bugfix\" for reporting issues & feature requests." << '\n'
          << "\"/?\" or \"help\" for help" << '\n'

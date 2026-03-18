@@ -178,21 +178,28 @@ Side Effects:
 
 --*/
 
-int bugfix_main()
+int bugfix_main(const std::vector<std::string>& uStr)
 {
-    cm_bugfix_out();
-    bugfix_select();
-    
-    feat_req();
-    
-    auto now = chrono::system_clock::now();
-    issueNumGen = chrono::system_clock::to_time_t(now);
-    
-    
-    cout << "Thank you for reporting. \n";
-    cout << "ISSUE LOGGED #:" << issueNumGen << "\n\n\n";
-    
-    bugfix_log();
+    if(uStr[1].empty())
+    {
+        cm_bugfix_out();
+        bugfix_select();
+        
+        feat_req();
+        
+        auto now = chrono::system_clock::now();
+        issueNumGen = chrono::system_clock::to_time_t(now);
+        
+        
+        cout << "Thank you for reporting. \n";
+        cout << "ISSUE LOGGED #:" << issueNumGen << "\n\n\n";
+        
+        bugfix_log();
+    }
+    else if (uStr[1] == "/r")
+    {
+        bugfix_read();
+    }
     
     return SUCCESS;;
 }
@@ -204,8 +211,8 @@ int bugfix_log()
 
     if (!file)
     {
-        std::cout << "File failed\n";
-        return 1;
+        std::cout << "ERROR: Couldn't read file.\n";
+        return FAILURE;
     }
 
     file << "NUMBER: " << issueNumGen << '\n';
@@ -214,5 +221,19 @@ int bugfix_log()
     file << "DESC:   " << issueDesc << '\n';
     file << "-----------------\n";
     
+    return SUCCESS;
+}
+
+int bugfix_read()
+{
+    ifstream in("bugfix.txt");
+    
+    if(!in)
+        return FAILURE;
+    
+    stringstream bffr;
+    bffr << in.rdbuf();
+    
+    cout << bffr.str() << '\n';
     return SUCCESS;
 }

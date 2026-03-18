@@ -15,6 +15,7 @@ Notes:
 #include "main.h"
 #include "clengine.h"
 #include "wrapper.h"
+#include "about.h"
 
 #include <iostream>
 
@@ -23,11 +24,18 @@ int wrap_help(const std::vector<std::string>&)
     return cm_help();
 }
 
+/*
 int wrap_bugfix(const std::vector<std::string>&)
 {
     return bugfix_main();
 }
 
+
+int wrap_abtbox(const std::vector<std::string>&)
+{
+    return showAboutBox();
+}
+*/
 int wrap_about(const std::vector<std::string>&)
 {
     return cm_about();

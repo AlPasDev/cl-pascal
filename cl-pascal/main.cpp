@@ -19,6 +19,7 @@ TODO:         make token quote aware 3
 #include "main.h"
 #include "clengine.h"
 #include "headers.h"
+#include "about.h"
 
 std::string CL_VER{""};
 
@@ -117,6 +118,7 @@ int main(int argc, const char * argv[])
 
 #if defined(__APPLE__)
   //  kill(getpid(), SIGKILL);
+    showAboutBox();
     system("osascript -e 'tell application \"Terminal\" to close front window'");
 #elif defined(__WIN32)
     system("exit");

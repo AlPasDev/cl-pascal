@@ -15,6 +15,7 @@ Notes:
 #include "main.h"
 #include "clengine.h"
 #include "headers.h"
+#include "about.h"
 
 using namespace std;
 
@@ -45,11 +46,12 @@ command commandTable[]
     {"rand", cm_random},
     {"echo", cm_echo},
     {"devinfo", wrap_devinfo},
-    {"bugfix", wrap_bugfix},
+    {"bugfix", bugfix_main},
     {"time", wrap_time},
     {"developer", wrap_devinfo},
     {"new", wrap_new},
     {"about", wrap_about},
+    //{"tabout", wrap_abtbox},
     {"clear", wrap_clear},
     {"quit", wrap_quit},
     {"exit", wrap_quit},

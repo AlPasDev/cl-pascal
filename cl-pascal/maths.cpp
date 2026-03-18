@@ -48,6 +48,12 @@ maths mCmdToEnum(const string_view currentIn)
 }
 
 /*
+mTokenType equationParser(const string_view currentIn)
+{
+
+}
+
+/*
 bool typeCheck(vector<string> uStr)
 {
     istringstream iss(uStr);

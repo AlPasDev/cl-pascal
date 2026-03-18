@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		99E146A32F6AA5F800EB0AA3 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99E146A22F6AA5F800EB0AA3 /* Cocoa.framework */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		99E486322F4ED80E005EBD1C /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -19,7 +23,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		99E486342F4ED80E005EBD1C /* cl-pascal */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "cl-pascal"; sourceTree = BUILT_PRODUCTS_DIR; };
+		99E146A22F6AA5F800EB0AA3 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		99E486342F4ED80E005EBD1C /* Pascal's Terminal */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Pascal's Terminal"; sourceTree = BUILT_PRODUCTS_DIR; };
 		99E4865F2F583656005EBD1C /* TestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TestPlan.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -36,17 +41,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99E146A32F6AA5F800EB0AA3 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		99E146A12F6AA5F800EB0AA3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				99E146A22F6AA5F800EB0AA3 /* Cocoa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		99E4862B2F4ED80E005EBD1C = {
 			isa = PBXGroup;
 			children = (
 				99E4865F2F583656005EBD1C /* TestPlan.xctestplan */,
 				99E486362F4ED80E005EBD1C /* cl-pascal */,
+				99E146A12F6AA5F800EB0AA3 /* Frameworks */,
 				99E486352F4ED80E005EBD1C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,7 +69,7 @@
 		99E486352F4ED80E005EBD1C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				99E486342F4ED80E005EBD1C /* cl-pascal */,
+				99E486342F4ED80E005EBD1C /* Pascal's Terminal */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -81,7 +96,7 @@
 			packageProductDependencies = (
 			);
 			productName = "cl-pascal";
-			productReference = 99E486342F4ED80E005EBD1C /* cl-pascal */;
+			productReference = 99E486342F4ED80E005EBD1C /* Pascal's Terminal */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -162,6 +177,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = v1.18m;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -182,10 +198,13 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = "Version 1.18M ~ Milestone 1";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				VERSIONING_SYSTEM = "";
+				VERSION_INFO_SUFFIX = "";
 			};
 			name = Debug;
 		};
@@ -223,6 +242,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = v1.18m;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -237,9 +257,12 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = "Version 1.18M ~ Milestone 1";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
+				VERSIONING_SYSTEM = "";
+				VERSION_INFO_SUFFIX = "";
 			};
 			name = Release;
 		};
@@ -247,7 +270,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				DEVELOPMENT_TEAM = "";
+				PRODUCT_NAME = "Pascal's Terminal";
 			};
 			name = Debug;
 		};
@@ -255,7 +279,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				DEVELOPMENT_TEAM = "";
+				PRODUCT_NAME = "Pascal's Terminal";
 			};
 			name = Release;
 		};

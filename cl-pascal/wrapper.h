@@ -20,4 +20,5 @@ int wrap_devinfo(const std::vector<std::string>&);
 int wrap_quit(const std::vector<std::string>&);
 int wrap_maths(const std::vector<std::string>& u_ln);
 int wrap_new(const std::vector<std::string>& u_ln);
-int wrap_bugfix(const std::vector<std::string>&);
+//int wrap_abtbox(const std::vector<std::string>& u_ln);
+//int wrap_bugfix(const std::vector<std::string>&);
