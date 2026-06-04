@@ -24,6 +24,10 @@ int wrap_help(const std::vector<std::string>&)
     return cm_help();
 }
 
+int wrap_hist(const std::vector<std::string>&)
+{
+    return cm_hist();
+}
 /*
 int wrap_bugfix(const std::vector<std::string>&)
 {

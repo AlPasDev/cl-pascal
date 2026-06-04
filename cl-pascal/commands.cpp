@@ -11,7 +11,7 @@ Overview:
              help
              about
              new
-             maths
+             calc
              rand
              echo
              time
@@ -39,13 +39,14 @@ constexpr string_view CL_COMMANDLIST
     "about      < Prints the about/version screen\n"
 //    "tabout     < Pop-ups the about/version screen\n"
     "new        < Prints what's new in this version\n"
-    "maths      < maths [+|-|/|*|pow|sqr]: maths functions for calculations <under construction>\n"
+    "calc       < calc [+|-|/|*|pow|sqr]: maths functions for calculations <under construction>\n"
     "rand       < rand [min-range] [max-range] [gen amount] [generator type]\n"
     "             Produces random nums from range. /f the command for types.\n"
     "echo       < echo \"phrase\" [repeat-amount]\n"
     "             duplicates the inputted text \n"
     "time       < Shows the current date&time \n"
     "clear      < Clears the screen\n"
+    "hist       < Shows the history of commands used.\n"
     "quit       < quits the application\n"
     "\n\n/f <command>     < Shows the format for each command\n"
     "/? or ?          < Prints the help menu, i.e. this one.\n"
@@ -226,6 +227,30 @@ int cm_time()
     return SUCCESS;
 }
 
+/*++
+cm_hist()
+Routine Description:
+
+    Prints History of Commands
+
+Arguments:
+     
+Return Value:
+    SUCCESS ; int
+Side Effects:
+
+    None.
+
+--*/
+int cm_hist()
+{
+    cout << "Command: \n";
+    for(int i{0}; i < cmdHist.size(); ++i)
+    {
+        cout << cmdHist[i] << '\n';
+    }
+    return SUCCESS;
+}
 
 /*++
 cm_clear()
@@ -293,11 +318,7 @@ int cm_newFeats()
          << "Version: "
          << CL_VER << " - Pre-Release"<<'\n'
          << "What's New?:          \n"
-         << "- Added options for rand command.\n"
-         << "- Added symbol control for maths (ported to rtm).\n"
-         << "- Added a what's new menu.\n"
-         << "- Added bugfix ; Alpha for error reporting.\n"
-         << "- Added about popup on quit.\n"
+         << "- Added \"hist\" command.\n"
          << "\n\n\n"
          << "Type \"bugfix\" for reporting issues & feature requests." << '\n'
          << "\"/?\" or \"help\" for help" << '\n'

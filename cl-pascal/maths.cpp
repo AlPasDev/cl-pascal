@@ -40,6 +40,7 @@ maths mCmdToEnum(const string_view currentIn)
     if(currentIn == "-") return maths::MATHS_SUB;
     if(currentIn == "/") return maths::MATHS_DIV;
     if(currentIn == "*") return maths::MATHS_MUL;
+    if(currentIn == "!") return maths::MATHS_FACT;
     if(currentIn == "pow") return maths::MATHS_POW;
     if(currentIn == "%") return maths::MATHS_MOD;
     if(currentIn == "sqrt") return maths::MATHS_SQRT;
@@ -80,37 +81,42 @@ Side Effects:
 --*/
 double cm_maths(const vector<string>& uStr)
 {
-    if(uStr.size() > 4 || uStr.size() < 4)
+    bool isSqrt      = (uStr.size() == 3 && uStr[2] == "sqrt"); // "a sqrt"
+    bool isBinary    = (uStr.size() == 4);                      // "a op b"
+    bool isFactorial = (uStr.size() == 3 && uStr[2] == "!");
+
+    if (!isSqrt && !isBinary)
     {
-        cout << s_mFormat << '\n';
+        cerr << "INVALID INPUT! " << s_mFormat << '\n';
         return FAILURE;
     }
-    
-    
-  //  if(!typeCheck(uStr))
-  //      break;
 
-    double mResult{0};      // result of maths
-    double a{0};            // num1
-    double b{0};            // num2
-    
-    try //Try to convert string to double
+    double mResult{0}, a{0}, b{0};
+
+    try
     {
         a = stod(uStr[1]);
-        b = stod(uStr[3]);
+        if (isBinary) b = stod(uStr[3]);   // only parse b when it exists
     }
     catch (...)
     {
         cerr << "INVALID INPUT! " << s_mFormat << '\n';
         return FAILURE;
     }
-        
+
+    
+    
+  //  if(!typeCheck(uStr))
+  //      break;
+
+
+
     switch (mCmdToEnum(uStr[2])) {
         case maths::MATHS_ADD:
             mResult = a + b;
             break;
             
-        case maths::MATHS_SUB:
+         case maths::MATHS_SUB:
             mResult = a - b;
             break;
             
@@ -127,13 +133,16 @@ double cm_maths(const vector<string>& uStr)
             mResult = a*b;
             break;
             
+        case maths::MATHS_FACT:
+            mResult = cm_fact(uStr);
+            
         case maths::MATHS_POW:
             mResult = pow(a, b);
             break;
         
-       // case maths::MATHS_SQRT:
-       //     mathsSqrt(
-        //    break;
+        case maths::MATHS_SQRT:
+            mResult = sqrt(a);
+            break;
             
         case maths::MATHS_MOD:
             mResult = cm_mod(uStr);
@@ -143,6 +152,8 @@ double cm_maths(const vector<string>& uStr)
            // break;
             
         default:
+            cerr << "INVALID INPUT!" << s_mFormat << '\n';
+            return FAILURE;
             break;
     }
     
@@ -185,4 +196,44 @@ int cm_mod(const vector<string>& uStr)
     modRes = a%b;
     
     return modRes;
+}
+
+/*++
+cm_fact(vector<string> uStr)
+Routine Description:
+
+    factorial function
+
+Arguments:
+    vector<string> uStr
+Return Value:
+    int ; factTotal; factorial result
+Side Effects:
+
+    None.
+
+--*/
+
+//TODO: FACTORIAL
+int cm_fact(const vector<string>& uStr)
+{
+    int factTotal{0};
+    int a{};
+    
+    try
+    {
+        a = stoi(uStr[1]);
+    }
+    catch (...)
+    {
+        cerr << "INVALID INPUT!" << s_mFormat << '\n';
+        return FAILURE;
+    }
+    
+    for(int x = a; x > 1; x--)
+    {
+        factTotal *= x;
+    }
+    
+    return factTotal;
 }

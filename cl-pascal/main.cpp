@@ -13,7 +13,9 @@ Overview:
 Notes:
               
 TODO:         TOP ; Make the maths project full expression aware 0
+TODO:         ADD ! Factorial
 TODO:         make token quote aware 3
+TODO:         remake error messages  3
 ================================================================================*/
 
 #include "main.h"
@@ -21,7 +23,7 @@ TODO:         make token quote aware 3
 #include "headers.h"
 #include "about.h"
 
-std::string CL_VER{""};
+std::string CL_VER{""}; //
 
 using namespace std;
 
@@ -58,7 +60,7 @@ void openBanner()
     cout << "=======================================================================\n"
          << CL_NAME << '\n'
          << CL_COPYRIGHT << '\n' << '\n'
-         << "Version: "
+         << "Version:  "
          << CL_VER << '\n'
          << "\"/?\" or \"help\" for help" << '\n'
          << "\"devinfo\" for developer/debug info" << '\n'

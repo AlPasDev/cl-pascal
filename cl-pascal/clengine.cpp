@@ -21,6 +21,7 @@ using namespace std;
 
 static vector<string> fStr{}; //Formatted String
 bool isBugFixActive{false};
+vector<string> cmdHist;
 //static double mResult{};      //math result
 
 /*++
@@ -42,12 +43,13 @@ Side Effects:
 command commandTable[]
 {
     {"help", wrap_help},
-    {"maths", wrap_maths},
+    {"calc", wrap_maths},
     {"rand", cm_random},
     {"echo", cm_echo},
     {"devinfo", wrap_devinfo},
     {"bugfix", bugfix_main},
     {"time", wrap_time},
+    {"hist", wrap_hist},
     {"developer", wrap_devinfo},
     {"new", wrap_new},
     {"about", wrap_about},
@@ -113,7 +115,8 @@ void cntr_cmd(vector<string> u_ln)
   //  if(!fSuccess)
     //    return;
     
-    cerr << "ERROR: Command not found. Try again.. \n";
+    cerr << "Unknown Command: " << u_ln[0] << "\n";
+    cerr << "Please Try Again.\n";
     
 }
 
@@ -167,6 +170,8 @@ NEWLINE:
     string uStr = cl_input();      // Own the string
     if(uStr.empty()) //TODO: CHECK IF EMPTY
         goto NEWLINE;
+    
+    cmdHist.push_back(uStr); //log command
 
     
     fStr = sTokenize(uStr);

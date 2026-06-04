@@ -23,6 +23,7 @@ enum class maths
     MATHS_POW, //TODO: .
     MATHS_MOD, //TODO: .
     MATHS_SQRT,
+    MATHS_FACT,
     MATHS_INV
 };
 

@@ -24,7 +24,7 @@
 
 /* Begin PBXFileReference section */
 		99E146A22F6AA5F800EB0AA3 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
-		99E486342F4ED80E005EBD1C /* Pascal's Terminal */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Pascal's Terminal"; sourceTree = BUILT_PRODUCTS_DIR; };
+		99E486342F4ED80E005EBD1C /* PascalTerminal */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PascalTerminal; sourceTree = BUILT_PRODUCTS_DIR; };
 		99E4865F2F583656005EBD1C /* TestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TestPlan.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,7 +69,7 @@
 		99E486352F4ED80E005EBD1C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				99E486342F4ED80E005EBD1C /* Pascal's Terminal */,
+				99E486342F4ED80E005EBD1C /* PascalTerminal */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -96,7 +96,7 @@
 			packageProductDependencies = (
 			);
 			productName = "cl-pascal";
-			productReference = 99E486342F4ED80E005EBD1C /* Pascal's Terminal */;
+			productReference = 99E486342F4ED80E005EBD1C /* PascalTerminal */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -271,7 +271,8 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
-				PRODUCT_NAME = "Pascal's Terminal";
+				PRODUCT_MODULE_NAME = PascalTerminal;
+				PRODUCT_NAME = PascalTerminal;
 			};
 			name = Debug;
 		};
@@ -280,7 +281,8 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
-				PRODUCT_NAME = "Pascal's Terminal";
+				PRODUCT_MODULE_NAME = PascalTerminal;
+				PRODUCT_NAME = PascalTerminal;
 			};
 			name = Release;
 		};
