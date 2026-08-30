@@ -4,7 +4,7 @@ Project:     cl-pascal
 Component:   command runner
 Author:      Alexander Pascal (fryman)
 Created:     2026-02-25
-Last Update: 2026-03-13
+Last Update: 2026-08-30
 Purpose:
              functions for each command
 Overview:
@@ -47,6 +47,7 @@ constexpr string_view CL_COMMANDLIST
     "time       < Shows the current date&time \n"
     "clear      < Clears the screen\n"
     "hist       < Shows the history of commands used.\n"
+    "macro      < Macro Meal Tracker Applet\n"
     "quit       < quits the application\n"
     "\n\n/f <command>     < Shows the format for each command\n"
     "/? or ?          < Prints the help menu, i.e. this one.\n"
@@ -410,4 +411,3 @@ int cm_echo(const vector<string>& uStr) //TODO: ...
 
     return SUCCESS;
 }
-

@@ -44,6 +44,7 @@ cformats helpToInt(const string_view currentIn)
     if(currentIn == "clear") return cformats::CMD_CLR_H;
     if(currentIn == "time") return cformats::CMD_TIME_H;
     if(currentIn == "quit") return cformats::CMD_QUIT_H;
+    if(currentIn == "meal") return cformats::CMD_MEAL_H;
     if(currentIn == "/f") return cformats::ARG_FORMAT_H;
     if(currentIn == "/?") return cformats::CMD_HELP_H;
     
@@ -109,6 +110,7 @@ int arg_formatH(const vector<string>& uStr)
         case cformats::CMD_TIME_H:
         case cformats::CMD_CLR_H:
         case cformats::CMD_DEVINFO_H:
+        case cformats::CMD_MEAL_H:
             
             cout << "NO ARGUMENTS FOR COMMAND.\n";
             break;

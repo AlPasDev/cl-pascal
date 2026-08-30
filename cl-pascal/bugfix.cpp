@@ -5,7 +5,7 @@ Component:   BUGFIX ; a simple bug reporter
 Author:      Alexander Pascal (fryman)
 Created:     2026-03-13
 Last Update: 2026-03-13
-Version:     m1
+Version:     m2
 Purpose:
              bugfix main
 Overview:

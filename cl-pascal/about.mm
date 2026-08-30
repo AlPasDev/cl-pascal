@@ -17,7 +17,7 @@ int showAboutBox()
 
                 [alert setIcon:icon];
         [alert setMessageText:@"About Pascal Terminal"];
-        [alert setInformativeText:@"Pascal Terminal\n Copyright (c) Alexander Pascal 2026\nMilestone 1 - Branch: cl-math\nv1.19m"];
+        [alert setInformativeText:@"Pascal Terminal\n Copyright (c) Alexander Pascal 2026\nMilestone 2 - Branch: cl-math\nv1.30au"];
         [alert addButtonWithTitle:@"Thank You"];
         [alert runModal];
 

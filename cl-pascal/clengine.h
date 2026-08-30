@@ -34,6 +34,7 @@ enum class cformats
     CMD_RANDOM_H,
     CMD_ECHO_H,
     CMD_CLR_H,
+    CMD_MEAL_H,
     CMD_TIME_H,
     CMD_QUIT_H,
     ARG_FORMAT_H,

@@ -30,14 +30,14 @@ extern bool isBugFixActive;
 constexpr std::string_view CL_NAME{"Pascal Terminal Application"};
 extern std::string CL_VER;
 extern std::vector<std::string> cmdHist;
-constexpr std::string VERPREFIX{"v1.4j"};
-constexpr std::string VERSUFFIX{"M1"};
+constexpr std::string VERPREFIX{"v1.30au"};
+constexpr std::string VERSUFFIX{"M2"};
 constexpr std::string_view CL_COPYRIGHT{"Copyright (c) 2026, Alexander Pascal"};
 constexpr std::string_view CL_COPYRIGHT2{"Copyright (c) 2026, PascSoft"};
 constexpr std::string_view CL_BRANCH{"cl-math"};
 constexpr std::string_view CL_DEVNAME{"alpascal"};
 constexpr std::string_view CL_BUILDLAB{"MacOS @ Hilton College, South Africa"};
-constexpr std::string_view CL_MILESTONE{"M1"};
+constexpr std::string_view CL_MILESTONE{"M2"};
 constexpr std::string_view s_mFormat{"FORMAT: calc [+|-|/|;|%|pow]"};
 constexpr std::string_view s_rFormat{"FORMAT: rand [min-range] [max-range] [gen amount] [generator type]"};
 
@@ -69,6 +69,8 @@ void cl_prompt();
 std::vector<std::string> sTokenize(std::string uLine);
 std::string cl_input();
 
+//meal func prototypes
+int cm_meal();
 
 
 //command function prototypes
@@ -96,5 +98,7 @@ void bugfix_select();
 int bugfix_main(const std::vector<std::string>& uStr);
 int bugfix_log();
 int bugfix_read();
+
+
 
 

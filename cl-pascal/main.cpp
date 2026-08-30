@@ -4,8 +4,8 @@ Project:      cl-pascal
 Component:    Main util
 Author:       Alexander Pascal (fryman)
 Created:      2026-02-25
-Last Update:  2026-03-13
-Version:      M1
+Last Update:  2026-08-30
+Version:      M2
 Purpose:
               main file
 Overview:

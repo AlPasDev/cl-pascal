@@ -70,6 +70,11 @@ int wrap_new(const std::vector<std::string>&)
     return cm_newFeats();
 }
 
+int wrap_meal(const std::vector<std::string>&)
+{
+    return cm_meal();
+}
+
 int wrap_maths(const std::vector<std::string>& u_ln)
 {
     if(u_ln.size() < 4)
