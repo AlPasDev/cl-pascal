@@ -104,7 +104,7 @@ double cm_maths(const vector<string>& uStr)
 
     if (!isSqrt && !isBinary)
     {
-        cerr << "INVALID INPUT! " << s_mFormat << '\n';
+        cerr << "INVALID INPUT! " << s_mFormat << '\n' << "ERROR CODE: ";
         return FAILURE;
     }
 
@@ -117,7 +117,7 @@ double cm_maths(const vector<string>& uStr)
     }
     catch (...)
     {
-        cerr << "INVALID INPUT! " << s_mFormat << '\n';
+        cerr << "INVALID INPUT! " << s_mFormat << '\n' << "ERROR CODE: ";
         return FAILURE;
     }
 
