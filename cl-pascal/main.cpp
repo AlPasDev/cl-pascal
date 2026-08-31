@@ -14,10 +14,16 @@ Notes:
               
 TODO:         TOP ; Make the maths project full expression aware 0
 TODO:         ADD ! Factorial
+TODO:         TOP ; Make Echo's repeat amount 0
 TODO:         Make a proper exit condition/input 0
+TODO:         Fix Invalid Math command; (Outputs a 0)  2
 TODO:         Remake as Command Util Standards 3
 TODO:         make token quote aware 3
 TODO:         remake error messages  3
+ 
+ BUG-006    Critical    Open     sqrt / factorial unreachable (3 stacked causes)                                         maths.cpp / wrapper.cpp
+ BUG-008    High        Open     Divide-by-zero prints error AND a spurious 0 result                                     maths.cpp
+ BUG-009    High        Open     echo's documented repeat-amount feature not implemented                                 commands.cpp
 ================================================================================*/
 
 #include "main.h"

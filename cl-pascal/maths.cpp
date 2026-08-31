@@ -8,7 +8,12 @@ Last Update: 2026-08-31
 Purpose:
              Maths functions + control
 Overview:
-Notes:       TODO: TOP ; Make the maths project full expression aware 1
+Notes:
+             TODO: TOP ; Make the maths project full expression aware 1
+             TODO: Fix Invalid Math command; (Outputs a 0)  2
+ 
+ BUG-008    High        Open     Divide-by-zero prints error AND a spurious 0 result
+ BUG-006    Critical    Open     sqrt / factorial unreachable (3 stacked causes)
 ===============================================================================*/
 
 #include "main.h"
@@ -93,7 +98,7 @@ double cm_maths(const vector<string>& uStr)
 {
     bool isSqrt      = (uStr.size() == 3 && uStr[2] == "sqrt"); // "a sqrt"
     bool isBinary    = (uStr.size() == 4);                      // "a op b"
-[[maybe_unused]]    bool isFactorial = (uStr.size() == 3 && uStr[2] == "!");
+    [[maybe_unused]]     bool isFactorial = (uStr.size() == 3 && uStr[2] == "!");
 
     if (!isSqrt && !isBinary)
     {

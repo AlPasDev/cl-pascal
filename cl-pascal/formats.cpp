@@ -10,6 +10,7 @@ Purpose:
 Overview:
 Assumptions:
 Notes:
+
 =================================================================================*/
 #include "main.h"
 #include "clengine.h"
@@ -36,6 +37,7 @@ Side Effects:
 cformats helpToInt(const string_view currentIn)
 {
     if(currentIn == "help") return cformats::CMD_HELP_H;
+    if(currentIn == "calc") return cformats::CMD_MATHS_H;
     if(currentIn == "maths") return cformats::CMD_MATHS_H;
     if(currentIn == "rand") return cformats::CMD_RANDOM_H;
     if(currentIn == "echo") return cformats::CMD_ECHO_H;

@@ -24,6 +24,9 @@ TODO:        bugfix
              
 Assumptions:
 Notes:
+ 
+BUG-009  High  Open  echo's documented repeat-amount feature not implemented
+ 
 ===============================================================================*/
 #include "main.h"
 #include "clengine.h"
