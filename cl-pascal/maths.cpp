@@ -4,7 +4,7 @@ Project:     cl-pascal
 Component:   Mathematics util
 Author:      Alexander Pascal (fryman)
 Created:     2026-02-27
-Last Update: 2026-08-31
+Last Update: 2026-09-01
 Purpose:
              Maths functions + control
 Overview:
@@ -160,7 +160,7 @@ double cm_maths(const vector<string>& uStr)
             break;
         
         case maths::MATHS_SQRT:
-            mResult = sqrt(a);
+            mResult = cm_sqrt(uStr);
             break;
             
         case maths::MATHS_MOD:
@@ -227,6 +227,15 @@ int cm_mod(const vector<string>& uStr)
     modRes = a%b;
     
     return modRes;
+}
+
+//Temporary Fix; cm_sqrt(a)
+//TODO: >>>>
+double cm_sqrt(const vector<string>& uStr)
+{
+    double x = stod( uStr[2]);
+    
+    return sqrt(x);
 }
 
 /*++

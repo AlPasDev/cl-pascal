@@ -323,7 +323,12 @@ int cm_newFeats()
          << "Version: "
          << CL_VER << " - Pre-Release"<<'\n'
          << "What's New?:          \n"
-         << "- Added \"hist\" command.\n"
+         << "- Fixed divide by zero error in MOD and Div.\n"
+         << "- Added Meal Macro Tracker (macro)\n"
+         << "- Added Temperature Converter (temp).\n"
+         << "- Created options for rand command.\n"
+         << "- Changed version format.\n"
+         << "- Added small minor tweaks, and fixed bugs..\n"
          << "\n\n\n"
          << "Type \"bugfix\" for reporting issues & feature requests." << '\n'
          << "\"/?\" or \"help\" for help" << '\n'
@@ -359,7 +364,7 @@ int cm_devInfo()
          << CL_COPYRIGHT << '\n' << '\n'
          << "Version: "
          << CL_VER << '\n'
-         << "STRING INFO: v [version number].[date][month]-[time] [milestone]\n"
+         << "STRING INFO: v [version number].[year][month][date]-[time] [milestone]\n"
          << "Compile Info: " << "\n\n"
          << "Date:           "
          << __DATE__ << "\nTime:           "

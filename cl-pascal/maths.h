@@ -20,9 +20,9 @@ enum class maths
     MATHS_SUB,
     MATHS_DIV,
     MATHS_MUL,
-    MATHS_POW, //TODO: .
-    MATHS_MOD, //TODO: .
-    MATHS_SQRT,
+    MATHS_POW,
+    MATHS_MOD,  //TODO: .
+    MATHS_SQRT, //TODO: .
     MATHS_FACT,
     MATHS_INV
 };
