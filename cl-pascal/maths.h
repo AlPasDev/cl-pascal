@@ -4,7 +4,7 @@ Project:     cl-pascal
 Component:   Mathematics Header
 Author:      Alexander Pascal (fryman)
 Created:     2026-02-27
-Last Update: 2026-03-03
+Last Update: 2026-08-31
 Purpose:
              Maths header
 Overview:
@@ -25,6 +25,14 @@ enum class maths
     MATHS_SQRT,
     MATHS_FACT,
     MATHS_INV
+};
+
+enum class tempunits
+{
+    TEMP_CELS,
+    TEMP_FAHR,
+    TEMP_KELV,
+    TEMP_INVALID
 };
 
 enum class mTokenType

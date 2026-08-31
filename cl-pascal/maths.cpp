@@ -4,7 +4,7 @@ Project:     cl-pascal
 Component:   Mathematics util
 Author:      Alexander Pascal (fryman)
 Created:     2026-02-27
-Last Update: 2026-03-11
+Last Update: 2026-08-31
 Purpose:
              Maths functions + control
 Overview:
@@ -48,6 +48,16 @@ maths mCmdToEnum(const string_view currentIn)
     return maths::MATHS_INV;
 }
 
+tempunits tempCmdToEnum(const string_view currentIn)
+{
+    if(currentIn == "C") return tempunits::TEMP_CELS;
+    if(currentIn == "F") return tempunits::TEMP_FAHR;
+    if(currentIn == "K") return tempunits::TEMP_KELV;
+    
+    
+    return tempunits::TEMP_INVALID;
+}
+
 /*
 mTokenType equationParser(const string_view currentIn)
 {
@@ -83,7 +93,7 @@ double cm_maths(const vector<string>& uStr)
 {
     bool isSqrt      = (uStr.size() == 3 && uStr[2] == "sqrt"); // "a sqrt"
     bool isBinary    = (uStr.size() == 4);                      // "a op b"
-    bool isFactorial = (uStr.size() == 3 && uStr[2] == "!");
+[[maybe_unused]]    bool isFactorial = (uStr.size() == 3 && uStr[2] == "!");
 
     if (!isSqrt && !isBinary)
     {
@@ -149,7 +159,7 @@ double cm_maths(const vector<string>& uStr)
             
        // case maths::MATHS_MOD: TODO: MAKE A WHOLE NEW FUNCTION
          //   mResult = a % b;
-           // break;
+            break;
             
         default:
             cerr << "INVALID INPUT!" << s_mFormat << '\n';
@@ -236,4 +246,77 @@ int cm_fact(const vector<string>& uStr)
     }
     
     return factTotal;
+}
+
+/*++
+cm_temp()
+Routine Description:
+
+    temp converter calc
+
+Arguments:
+    const vector<string>& uStr
+Return Value:
+    SUCCESS ; int
+Side Effects:
+
+    None.
+
+--*/
+int cm_temp(const vector<string>& uStr) //TODO: ...
+{
+    
+    [[maybe_unused]] int argsSize{static_cast<int>(uStr.size())};
+    if(uStr.size() != 4)
+    {
+        cout << s_tempFormat << '\n';
+        return FAILURE;
+    }
+
+    double origTemp{stod(uStr[1])};
+    double tempResult{0};
+    
+    switch (tempCmdToEnum(uStr[2])) {
+        case tempunits::TEMP_CELS:
+            if(uStr[3] == "F")
+            {
+                tempResult = (origTemp * 1.8) + 32;
+            }
+            else if (uStr[3] == "K")
+            {
+                tempResult = (origTemp + 273.15);
+            }
+            break;
+            
+        case tempunits::TEMP_FAHR:
+            if(uStr[3] == "C")
+            {
+                tempResult = (origTemp - 32) / 1.8;
+            }
+            else if (uStr[3] == "K")
+            {
+                tempResult = (origTemp + 459.67)/1.8;
+            }
+            break;
+            
+        case tempunits::TEMP_KELV:
+            if(uStr[3] == "F")
+            {
+                tempResult = (origTemp * 1.8) - 459.67;
+            }
+            else if (uStr[3] == "C")
+            {
+                tempResult = origTemp - 273.15;
+            }
+            break;
+            
+        default:
+            cerr << "INVALID INPUT!" << s_tempFormat << '\n';
+            return FAILURE;
+            break;
+    }
+    
+    cout << origTemp << " degrees " << uStr[2] << " is " << tempResult << " degrees " << uStr[3] << '\n';
+    
+    return SUCCESS;
 }

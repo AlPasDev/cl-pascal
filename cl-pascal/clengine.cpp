@@ -4,7 +4,7 @@ Project:     cl-pascal
 Component:   CL Engine util
 Author:      Alexander Pascal (fryman)
 Created:     2026-02-27
-Last Update: 2026-08-30
+Last Update: 2026-08-31
 Purpose:
              Command Line engine + Dispatch for commands
 Overview:
@@ -50,6 +50,7 @@ command commandTable[]
     {"bugfix", bugfix_main},
     {"time", wrap_time},
     {"hist", wrap_hist},
+    {"temp", cm_temp},
     {"developer", wrap_devinfo},
     {"new", wrap_new},
     {"macro", wrap_meal},

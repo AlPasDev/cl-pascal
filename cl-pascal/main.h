@@ -4,7 +4,7 @@ Project:     cl-pascal
 Component:   Main util
 Author:      Alexander Pascal (fryman)
 Created:     2026-02-27
-Last Update: 2026-03-13
+Last Update: 2026-08-31
 Purpose:
              main header file
 Overview:
@@ -40,6 +40,7 @@ constexpr std::string_view CL_BUILDLAB{"MacOS @ Hilton College, South Africa"};
 constexpr std::string_view CL_MILESTONE{"M2"};
 constexpr std::string_view s_mFormat{"FORMAT: calc [+|-|/|;|%|pow]"};
 constexpr std::string_view s_rFormat{"FORMAT: rand [min-range] [max-range] [gen amount] [generator type]"};
+constexpr std::string_view s_tempFormat{"FORMAT: temp [input temp] \"orig unit\" \"converting to unit\" ; UNITS: C, F or K"};
 
 #if defined(_WIN32)
 constexpr std::string_view CL_USEROS{"WIN32 ; Windows"};
@@ -84,7 +85,9 @@ int cm_newFeats();
 int cm_devInfo();
 int cm_hist();
 bool cm_quit();
+int cm_temp(const std::vector<std::string>& uStr);
 int arg_formatH(const std::vector<std::string>& uStr);
+
 
 //maths func prototypes
 double cm_maths(const std::vector<std::string>& uStr);

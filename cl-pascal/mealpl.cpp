@@ -4,7 +4,7 @@ Project:     cl-pascal
 Component:   Macro Tracker Applet
 Author:      Alexander Pascal (fryman)
 Created:     2026-08-30
-Last Update: 2026-08-30
+Last Update: 2026-08-31
 Purpose:
              Macro Tracker Applet functions + control
 Overview:
@@ -24,10 +24,10 @@ using namespace std;
 constexpr int targetKCal{3300};
 
 constexpr int targetProteinMin{150};
-//constexpr int targetProteinMax{170};
+[[maybe_unused]] constexpr int targetProteinMax{170};
 
 constexpr int targetCarbsMin{400};
-//constexpr int targetCarbsMax{450};
+[[maybe_unused]] constexpr int targetCarbsMax{450};
 constexpr int maxMealEntries{100};
 
 /*++
