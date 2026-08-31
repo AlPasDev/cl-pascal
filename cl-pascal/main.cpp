@@ -14,6 +14,8 @@ Notes:
               
 TODO:         TOP ; Make the maths project full expression aware 0
 TODO:         ADD ! Factorial
+TODO:         Make a proper exit condition/input 0
+TODO:         Remake as Command Util Standards 3
 TODO:         make token quote aware 3
 TODO:         remake error messages  3
 ================================================================================*/

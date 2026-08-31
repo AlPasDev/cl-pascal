@@ -8,8 +8,9 @@ Last Update: 2026-08-30
 Purpose:
              Macro Tracker Applet functions + control
 Overview:
+             Ported from Macro Tracker Project
 Notes:
-TODO:        Make a proper exit condition/input 1
+TODO:        Make a proper exit condition/input 0
 TODO:        Remake as Command Util Standards 3
 ===============================================================================*/
 
@@ -18,13 +19,15 @@ TODO:        Remake as Command Util Standards 3
 #include "headers.h"
 #include "mealpl.h"
 
+using namespace std;
+
 constexpr int targetKCal{3300};
 
 constexpr int targetProteinMin{150};
-constexpr int targetProteinMax{170};
+//constexpr int targetProteinMax{170};
 
 constexpr int targetCarbsMin{400};
-constexpr int targetCarbsMax{450};
+//constexpr int targetCarbsMax{450};
 constexpr int maxMealEntries{100};
 
 /*++
@@ -52,12 +55,12 @@ int cm_meal()
     int inCarb{};
     int inProtein{};
     
-    std::cout << "Welcome Alexander.\n";
+    cout << "Welcome Alexander.\n";
     
     for(int x = 1; x <= maxMealEntries; ++x)
     {
-        std::cout << "Enter meal no. " << x << " Macros:\n";
-        std::cin >> inKCal >> inProtein >> inCarb;
+        cout << "Enter meal no. " << x << " Macros:\n";
+        cin >> inKCal >> inProtein >> inCarb;
         if(inKCal == 0)
         {
             break;
@@ -67,14 +70,14 @@ int cm_meal()
         carbTot     += inCarb;
         proteinTot  += inProtein;
         
-        std::cout << "Current Macros:\nkcals: " << kCalTot << " protein: " << proteinTot << " carbs: " << carbTot << '\n';
+        cout << "Current Macros:\nkcals: " << kCalTot << " protein: " << proteinTot << " carbs: " << carbTot << '\n';
         
         targetWarn(kCalTot, targetKCal, "KCal");
         targetWarn(proteinTot, targetProteinMin, "Protein");
         targetWarn(carbTot, targetCarbsMin, "Carbs");
     }
     
-    std::cout << "Final Macros Data: kcals: " << kCalTot << " protein: " << proteinTot << " carbs: " << carbTot << '\n';
+    cout << "Final Macros Data: kcals: " << kCalTot << " protein: " << proteinTot << " carbs: " << carbTot << '\n';
     
     return SUCCESS;
 }
@@ -100,6 +103,6 @@ void targetWarn(int totMacro, int targetVal, const std::string& macroType)
 {
     if(totMacro < targetVal)
     {
-        std::cout << "Warning: " << macroType << " target is not reached!\n";
+        cout << "Warning: " << macroType << " target is not reached!\n";
     }
 }

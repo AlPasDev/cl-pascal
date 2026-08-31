@@ -178,9 +178,9 @@ Side Effects:
 
 --*/
 
-int bugfix_main(const std::vector<std::string>& uStr)
+int bugfix_main(const vector<string>& uStr)
 {
-    if(uStr[1].empty())
+    if(uStr.size() < 2)
     {
         cm_bugfix_out();
         bugfix_select();
