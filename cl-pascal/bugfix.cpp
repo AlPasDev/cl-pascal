@@ -4,7 +4,7 @@ Project:     cl-pascal
 Component:   BUGFIX ; a simple bug reporter
 Author:      Alexander Pascal (fryman)
 Created:     2026-03-13
-Last Update: 2026-03-13
+Last Update: 2026-08-31
 Version:     m2
 Purpose:
              bugfix main

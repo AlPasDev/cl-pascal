@@ -30,7 +30,7 @@ extern bool isBugFixActive;
 constexpr std::string_view CL_NAME{"Pascal Terminal Application"};
 extern std::string CL_VER;
 extern std::vector<std::string> cmdHist;
-constexpr std::string VERPREFIX{"v1.30au"};
+constexpr std::string VERPREFIX{"v1.31au"};
 constexpr std::string VERSUFFIX{"M2"};
 constexpr std::string_view CL_COPYRIGHT{"Copyright (c) 2026, Alexander Pascal"};
 constexpr std::string_view CL_COPYRIGHT2{"Copyright (c) 2026, PascSoft"};
