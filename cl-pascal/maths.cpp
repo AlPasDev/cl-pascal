@@ -203,6 +203,7 @@ int cm_mod(const vector<string>& uStr)
     int modRes{0};  // result of mod %
     int a{};        // num 1
     int b{};        // num 2
+    bool isErrorFlag {0};
     
     try
     {
@@ -212,6 +213,14 @@ int cm_mod(const vector<string>& uStr)
     catch (...)
     {
         cerr << "INVALID INPUT!" << s_mFormat << '\n';
+        return FAILURE;
+    }
+    
+    if(b == 0)
+    {
+        cout << "INVALID: DIVIDE BY ZERO ERROR.. CODE: ";
+        isErrorFlag = 1;
+        
         return FAILURE;
     }
     
