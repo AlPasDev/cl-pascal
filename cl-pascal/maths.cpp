@@ -69,7 +69,6 @@ mTokenType equationParser(const string_view currentIn)
 
 }
 
-/*
 bool typeCheck(vector<string> uStr)
 {
     istringstream iss(uStr);
@@ -79,6 +78,8 @@ bool typeCheck(vector<string> uStr)
         return FAILURE;
 }
 */
+
+
 /*++
 cm_maths(vector<string> uStr)
 Routine Description:
@@ -98,6 +99,7 @@ double cm_maths(const vector<string>& uStr)
 {
     bool isSqrt      = (uStr.size() == 3 && uStr[2] == "sqrt"); // "a sqrt"
     bool isBinary    = (uStr.size() == 4);                      // "a op b"
+    bool isErrorFlag = 0;
     [[maybe_unused]]     bool isFactorial = (uStr.size() == 3 && uStr[2] == "!");
 
     if (!isSqrt && !isBinary)
@@ -138,7 +140,9 @@ double cm_maths(const vector<string>& uStr)
         case maths::MATHS_DIV:
             if(b == 0)
             {
-                cout << "INVALID: DIVIDE BY ZERO ERROR\n\n";
+                cout << "INVALID: DIVIDE BY ZERO ERROR.. CODE: ";
+                isErrorFlag = 1;
+                
                 break;
             }
             mResult = a/b;
@@ -148,7 +152,7 @@ double cm_maths(const vector<string>& uStr)
             mResult = a*b;
             break;
             
-        case maths::MATHS_FACT:
+        case maths::MATHS_FACT:  //TODO: FINISH FACTORIAL
             mResult = cm_fact(uStr);
             
         case maths::MATHS_POW:
@@ -171,6 +175,9 @@ double cm_maths(const vector<string>& uStr)
             return FAILURE;
             break;
     }
+    
+    if(isErrorFlag == 1)
+        return FAILURE;
     
     return mResult;
 }

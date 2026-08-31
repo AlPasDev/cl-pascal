@@ -38,7 +38,7 @@ constexpr std::string_view CL_BRANCH{"cl-math"};
 constexpr std::string_view CL_DEVNAME{"alpascal"};
 constexpr std::string_view CL_BUILDLAB{"MacOS @ Hilton College, South Africa"};
 constexpr std::string_view CL_MILESTONE{"M2"};
-constexpr std::string_view s_mFormat{"FORMAT: calc [+|-|/|;|%|pow]"};
+constexpr std::string_view s_mFormat{"FORMAT: calc [+|-|/|*|%|pow]"};
 constexpr std::string_view s_rFormat{"FORMAT: rand [min-range] [max-range] [gen amount] [generator type]"};
 constexpr std::string_view s_tempFormat{"FORMAT: temp [input temp] \"orig unit\" \"converting to unit\" ; UNITS: C, F or K"};
 
