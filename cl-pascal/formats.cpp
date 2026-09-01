@@ -44,6 +44,7 @@ cformats helpToInt(const string_view currentIn)
     if(currentIn == "devinfo") return cformats::CMD_DEVINFO_H;
     if(currentIn == "about") return cformats::CMD_ABOUT_H;
     if(currentIn == "temp") return cformats::CMD_TEMP_H;
+    if(currentIn == "strline") return cformats::CMD_STRLINE_H;
     if(currentIn == "clear") return cformats::CMD_CLR_H;
     if(currentIn == "time") return cformats::CMD_TIME_H;
     if(currentIn == "quit") return cformats::CMD_QUIT_H;
@@ -117,6 +118,7 @@ int arg_formatH(const vector<string>& uStr)
         case cformats::CMD_HELP_H:
         case cformats::CMD_TIME_H:
         case cformats::CMD_CLR_H:
+        case cformats::CMD_STRLINE_H:
         case cformats::CMD_DEVINFO_H:
         case cformats::CMD_MEAL_H:
             

@@ -50,6 +50,7 @@ command commandTable[]
     {"bugfix", bugfix_main},
     {"time", wrap_time},
     {"hist", wrap_hist},
+    {"strline", wrap_strLine},
     {"temp", cm_temp},
     {"developer", wrap_devinfo},
     {"new", wrap_new},

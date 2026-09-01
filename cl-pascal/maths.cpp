@@ -350,3 +350,53 @@ int cm_temp(const vector<string>& uStr) //TODO: ...
     
     return SUCCESS;
 }
+
+/*++
+cm_strLine()
+Routine Description:
+
+    Straight Line Calculations
+
+Arguments:
+     
+Return Value:
+    SUCCESS ; int
+Side Effects:
+
+    None.
+
+--*/
+double cm_strLine()
+{
+    double x1, x2;
+    double y1, y2;
+    
+    double midx;
+    double midy;
+    double leng;
+    double grad;
+    
+    cout << "Please enter two coords (x, y)" << '\n';
+    cin >> x1 >> y1 >> x2 >> y2;
+    
+    midx = (x1 + x2)/2;
+    midy = (y1 + y2)/2;
+    
+    leng = sqrt(pow((x2-x1), 2) + pow((y2-y1), 2));
+    
+    grad = (y2 - y1)/(x2 - x1);
+    
+    cout << "Midpoint: " << midx << "," << midy << '\n';
+    cout << "Length: " << leng << '\n';
+    
+    if(x1 == x2)
+    {
+        cout << "Gradient: " << 0 << '\n';
+    }
+    else
+    {
+        cout << "Gradient: " << grad << '\n';
+    }
+    
+    return SUCCESS;
+}

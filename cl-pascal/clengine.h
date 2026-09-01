@@ -32,6 +32,7 @@ enum class cformats
     CMD_MATHS_H,
     CMD_MOD_H,
     CMD_RANDOM_H,
+    CMD_STRLINE_H,
     CMD_ECHO_H,
     CMD_CLR_H,
     CMD_MEAL_H,

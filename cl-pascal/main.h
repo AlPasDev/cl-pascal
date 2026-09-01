@@ -94,6 +94,7 @@ int cm_mod(const std::vector<std::string>& uStr);
 int cm_fact(const std::vector<std::string>& uStr);
 double cm_sqrt(const std::vector<std::string>& uStr);
 int cm_temp(const std::vector<std::string>& uStr);
+double cm_strLine();
 
 //bugfix func prototypes
 void cm_bugfix_out();

@@ -28,6 +28,11 @@ int wrap_hist(const std::vector<std::string>&)
 {
     return cm_hist();
 }
+
+int wrap_strLine(const std::vector<std::string>&)
+{
+    return cm_strLine();
+}
 /*
 int wrap_bugfix(const std::vector<std::string>&)
 {

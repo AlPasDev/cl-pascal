@@ -23,5 +23,6 @@ int wrap_new(const std::vector<std::string>& u_ln);
 int wrap_hist(const std::vector<std::string>&);
 int wrap_meal(const std::vector<std::string>& );
 int wrap_temp(const std::vector<std::string>& );
+int wrap_strLine(const std::vector<std::string>&);
 //int wrap_abtbox(const std::vector<std::string>& u_ln);
 //int wrap_bugfix(const std::vector<std::string>&);
