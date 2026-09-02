@@ -4,7 +4,7 @@ Project:     cl-pascal
 Component:   Mathematics util
 Author:      Alexander Pascal (fryman)
 Created:     2026-02-27
-Last Update: 2026-09-01
+Last Update: 2026-09-02
 Purpose:
              Maths functions + control
 Overview:
@@ -379,12 +379,15 @@ double cm_strLine()
     cout << "Please enter two coords (x, y)" << '\n';
     cin >> x1 >> y1 >> x2 >> y2;
     
-    midx = (x1 + x2)/2;
-    midy = (y1 + y2)/2;
+    Coordinate coord_a{x1, y1};
+    Coordinate coord_b{x2, y2};
     
-    leng = sqrt(pow((x2-x1), 2) + pow((y2-y1), 2));
+    midx = (coord_a.x + coord_b.x)/2;
+    midy = (coord_a.y + coord_b.y)/2;
     
-    grad = (y2 - y1)/(x2 - x1);
+    leng = sqrt(pow((coord_b.y-coord_a.y), 2) + pow((coord_b.y-coord_a.y), 2));
+    
+    grad = (coord_b.y-coord_a.y)/(coord_b.y-coord_a.y);
     
     cout << "Midpoint: " << midx << "," << midy << '\n';
     cout << "Length: " << leng << '\n';

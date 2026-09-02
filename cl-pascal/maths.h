@@ -4,7 +4,7 @@ Project:     cl-pascal
 Component:   Mathematics Header
 Author:      Alexander Pascal (fryman)
 Created:     2026-02-27
-Last Update: 2026-08-31
+Last Update: 2026-09-02
 Purpose:
              Maths header
 Overview:
@@ -46,4 +46,10 @@ enum class mTokenType
     leftparen,
     rightparen,
     end
+};
+
+struct Coordinate
+{
+    double x{};
+    double y{};
 };

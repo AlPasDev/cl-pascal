@@ -4,7 +4,7 @@ Project:     cl-pascal
 Component:   Macro Tracker Applet
 Author:      Alexander Pascal (fryman)
 Created:     2026-08-30
-Last Update: 2026-08-31
+Last Update: 2026-09-02
 Purpose:
              Macro Tracker Applet functions + control
 Overview:
@@ -21,13 +21,15 @@ TODO:        Remake as Command Util Standards 3
 
 using namespace std;
 
-constexpr int targetKCal{3300};
+constexpr Targets target{3000, 150, 400, 100};
 
+/*
 constexpr int targetProteinMin{150};
 [[maybe_unused]] constexpr int targetProteinMax{170};
 
 constexpr int targetCarbsMin{400};
 [[maybe_unused]] constexpr int targetCarbsMax{450};
+*/
 constexpr int maxMealEntries{100};
 
 /*++
@@ -72,9 +74,9 @@ int cm_meal()
         
         cout << "Current Macros:\nkcals: " << kCalTot << " protein: " << proteinTot << " carbs: " << carbTot << '\n';
         
-        targetWarn(kCalTot, targetKCal, "KCal");
-        targetWarn(proteinTot, targetProteinMin, "Protein");
-        targetWarn(carbTot, targetCarbsMin, "Carbs");
+        targetWarn(kCalTot, target.kcal, "KCal");
+        targetWarn(proteinTot, target.protein, "Protein");
+        targetWarn(carbTot, target.carbs, "Carbs");
     }
     
     cout << "Final Macros Data: kcals: " << kCalTot << " protein: " << proteinTot << " carbs: " << carbTot << '\n';
