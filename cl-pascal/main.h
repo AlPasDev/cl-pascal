@@ -58,8 +58,11 @@ constexpr std::string_view CL_USEROS{"UNKNOWN OS NAME"};
 
 #endif
 
-constexpr int SUCCESS{0};
-constexpr int FAILURE{1};
+enum funcStatus
+{
+    SUCCESS,
+    FAILURE
+};
 
 //banner/main running func prototypes
 void openBanner();
