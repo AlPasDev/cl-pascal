@@ -4,7 +4,7 @@ Project:     cl-pascal
 Component:   wrapper functions for cmd dispatch
 Author:      Alexander Pascal (fryman)
 Created:     2026-03-09
-Last Update: 22026-08-30
+Last Update: 2026-09-04
 Purpose:
              wrapper header
 Overview:
@@ -18,6 +18,8 @@ Notes:
 #include "about.h"
 
 #include <iostream>
+
+double m_result{0};
 
 int wrap_help(const std::vector<std::string>&)
 {
@@ -82,13 +84,9 @@ int wrap_meal(const std::vector<std::string>&)
 
 int wrap_maths(const std::vector<std::string>& u_ln)
 {
-    if(u_ln.size() < 4)
-    {
-        std::cerr << s_mFormat << '\n';
-        return FAILURE;
-    }
+    m_result = cm_maths(u_ln, m_result);
     
-    std::cout << cm_maths(u_ln) << '\n';
+    std::cout << m_result << '\n';
     
     return SUCCESS;
 }

@@ -19,3 +19,68 @@ Notes:
 =================================================================================*/
 
 
+
+NUMBER: 1788300003
+TYPE:   bug
+TITLE:  echo doesn't repeat like it says it does
+DESC:   /f echo says [repeat-amount] is a thing. echo hi 3 just prints "hi 3"
+        once. Either finish the feature or fix the help text, this cost me
+        ten minutes of thinking I was using it wrong.
+-----------------
+NUMBER: 1788300004
+TYPE:   feature
+TITLE:  no way to see what a bad command should have looked like
+DESC:   When something fails, half the time I get a wall of text (calc) and
+        half the time nothing useful (divide by zero literally shows a
+        number after the error). Would love every failure to end with one
+        clean line: what you typed, what was expected.
+-----------------
+NUMBER: 1788300005
+TYPE:   bug
+TITLE:  quitting out of bugfix loses my report if I make a typo
+DESC:   Started a bug report, mistyped the title, no way to go back and fix
+        it before hitting enter on the description. Had to finish the whole
+        flow and file a second report.
+
+Feature requests:
+
+NUMBER: 1788300006
+TYPE:   feature
+TITLE:  command history recall (up arrow)
+DESC:   hist shows past commands but I can't re-run one without retyping it.
+        Even just "up arrow repeats last command" would save a lot of typing
+        during a calc session.
+-----------------
+NUMBER: 1788300007
+TYPE:   feature
+TITLE:  an "ans" variable for calc
+DESC:   Coming from any real calculator - I want calc 5 + 3 then calc ans * 2
+        to just work off the last result instead of me re-typing the number.
+-----------------
+NUMBER: 1788300008
+TYPE:   feature
+TITLE:  one-shot mode from the actual shell
+DESC:   Would be great to run ./clpascal calc 5 + 3 directly from bash/zsh
+        without dropping into the REPL first - makes it scriptable, usable
+        in a Makefile, etc.
+-----------------
+NUMBER: 1788300009
+TYPE:   feature
+TITLE:  more temp units - or at least more converters in general
+DESC:   temp is great but it's the only converter. Length, weight, currency
+        (even with a hardcoded/offline rate) would make "calc" and "temp"
+        feel like one coherent unit-conversion toolkit instead of one command
+        that got lucky.
+-----------------
+NUMBER: 1788300010
+TYPE:   feature
+TITLE:  save/export command history to a file
+DESC:   hist is nice for a quick look back, but there's no way to get it out
+        of the terminal. Even "hist > export somefile.txt" would help when
+        I want to keep a log of a session.
+-----------------
+NUMBER: 1788300011
+TYPE:   feature
+TITLE:  config file for defaults
+DESC:   Would like to set a default rand generator, a default temp unit, etc.
+        once instead of typing the full args every time.

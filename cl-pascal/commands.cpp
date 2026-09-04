@@ -4,7 +4,7 @@ Project:     cl-pascal
 Component:   command runner
 Author:      Alexander Pascal (fryman)
 Created:     2026-02-25
-Last Update: 2026-08-31
+Last Update: 2026-09-04
 Purpose:
              functions for each command
 Overview:
@@ -45,7 +45,7 @@ constexpr string_view CL_COMMANDLIST
     "calc       < calc [+|-|/|*|pow|sqr]: maths functions for calculations <under construction>\n"
     "rand       < rand [min-range] [max-range] [gen amount] [generator type]\n"
     "             Produces random nums from range. /f the command for types.\n"
-    "echo       < echo \"phrase\" [repeat-amount]\n"
+    "echo       < echo \"phrase\" \r [repeat-amount]\n"
     "             duplicates the inputted text \n"
     "time       < Shows the current date&time \n"
     "clear      < Clears the screen\n"
@@ -328,6 +328,8 @@ int cm_newFeats()
          << "- Added Meal Macro Tracker (macro)\n"
          << "- Added Temperature Converter (temp).\n"
          << "- Added Straight Line Calculations (strline).\n"
+         << "- Added ans variable for the calc.\n"
+         << "- Added factorial and sqrt.\n"
          << "- Created options for rand command.\n"
          << "- Changed version format.\n"
          << "- Added small minor tweaks, and fixed bugs..\n"
@@ -408,7 +410,7 @@ int cm_echo(const vector<string>& uStr) //TODO: ...
 {
  /*   if(uStr.size() > 2 || uStr.size() < 2)
     {
-        cout << "FORMAT: echo \"phrase\" [repeat-amount] " << '\n';
+        cout << "FORMAT: echo \"phrase\" \r [repeat-amount] " << '\n';
         return FAILURE;
     }
 */

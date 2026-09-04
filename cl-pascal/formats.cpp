@@ -4,7 +4,7 @@ Project:     cl-pascal
 Component:   wrapper functions for cmd dispatch
 Author:      Alexander Pascal (fryman)
 Created:     2026-03-09
-Last Update: 2026-08-31
+Last Update: 2026-09-04
 Purpose:
              /f command
 Overview:
@@ -100,7 +100,7 @@ int arg_formatH(const vector<string>& uStr)
         
         case cformats::CMD_ECHO_H:
             
-            cout << "FORMAT: echo \"phrase\" [repeat-amount]" << '\n';
+            cout << "FORMAT: echo \"phrase\" \r [repeat-amount]" << '\n';
             break;
         
         case cformats::ARG_FORMAT_H:

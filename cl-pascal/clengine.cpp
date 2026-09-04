@@ -4,7 +4,7 @@ Project:     cl-pascal
 Component:   CL Engine util
 Author:      Alexander Pascal (fryman)
 Created:     2026-02-27
-Last Update: 2026-08-31
+Last Update: 2026-09-04
 Purpose:
              Command Line engine + Dispatch for commands
 Overview:
@@ -157,7 +157,7 @@ Routine Description:
 
 Arguments:
      
-Return Value:
+Return Value:lastRslt
     bool true;
 Side Effects:
 

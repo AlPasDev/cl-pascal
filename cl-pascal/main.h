@@ -4,7 +4,7 @@ Project:     cl-pascal
 Component:   Main util
 Author:      Alexander Pascal (fryman)
 Created:     2026-02-27
-Last Update: 2026-09-01
+Last Update: 2026-09-04
 Purpose:
              main header file
 Overview:
@@ -30,7 +30,7 @@ extern bool isBugFixActive;
 constexpr std::string_view CL_NAME{"Pascal Terminal Application"};
 extern std::string CL_VER;
 extern std::vector<std::string> cmdHist;
-constexpr std::string VERPREFIX{"v1.260902"};
+constexpr std::string VERPREFIX{"v1.260904"};
 constexpr std::string VERSUFFIX{"M2"};
 constexpr std::string_view CL_COPYRIGHT{"Copyright (c) 2026, Alexander Pascal"};
 constexpr std::string_view CL_COPYRIGHT2{"Copyright (c) 2026, PascSoft"};
@@ -92,7 +92,8 @@ int arg_formatH(const std::vector<std::string>& uStr);
 
 
 //maths func prototypes
-double cm_maths(const std::vector<std::string>& uStr);
+//std::optional<double>
+double cm_maths(const std::vector<std::string>& uStr, double& prevAns);
 int cm_mod(const std::vector<std::string>& uStr);
 int cm_fact(const std::vector<std::string>& uStr);
 double cm_sqrt(const std::vector<std::string>& uStr);

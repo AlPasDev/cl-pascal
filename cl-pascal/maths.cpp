@@ -4,16 +4,16 @@ Project:     cl-pascal
 Component:   Mathematics util
 Author:      Alexander Pascal (fryman)
 Created:     2026-02-27
-Last Update: 2026-09-02
+Last Update: 2026-09-04
 Purpose:
              Maths functions + control
 Overview:
 Notes:
              TODO: TOP ; Make the maths project full expression aware 1
-             TODO: Fix Invalid Math command; (Outputs a 0)  2
+             TODO: TODO: have ans work with both a and b 1
+             TODO: MAKE SQRT FORMAT CALC SQRT 5 ; 3
  
  BUG-008    High        Open     Divide-by-zero prints error AND a spurious 0 result
- BUG-006    Critical    Open     sqrt / factorial unreachable (3 stacked causes)
 ===============================================================================*/
 
 #include "main.h"
@@ -95,14 +95,15 @@ Side Effects:
     None.
 
 --*/
-double cm_maths(const vector<string>& uStr)
+//optional<double>
+double cm_maths(const vector<string>& uStr, double& prevAns)
 {
+    bool isErrorFlag = 0;
     bool isSqrt      = (uStr.size() == 3 && uStr[2] == "sqrt"); // "a sqrt"
     bool isBinary    = (uStr.size() == 4);                      // "a op b"
-    bool isErrorFlag = 0;
-    [[maybe_unused]]     bool isFactorial = (uStr.size() == 3 && uStr[2] == "!");
+    bool isFact      = (uStr.size() == 3 && uStr[2] == "!");
 
-    if (!isSqrt && !isBinary)
+    if (!isSqrt && !isBinary && !isFact)
     {
         cerr << "INVALID INPUT! " << s_mFormat << '\n' << "ERROR CODE: ";
         return FAILURE;
@@ -112,7 +113,17 @@ double cm_maths(const vector<string>& uStr)
 
     try
     {
-        a = stod(uStr[1]);
+        //TODO: have ans work with both a and b
+       // maybe have
+        if(uStr[1] == "ans")
+        {
+            a = prevAns;
+        }
+        else
+        {
+            a = stod(uStr[1]);
+        }
+        
         if (isBinary) b = stod(uStr[3]);   // only parse b when it exists
     }
     catch (...)
@@ -154,6 +165,7 @@ double cm_maths(const vector<string>& uStr)
             
         case maths::MATHS_FACT:  //TODO: FINISH FACTORIAL
             mResult = cm_fact(uStr);
+            break;
             
         case maths::MATHS_POW:
             mResult = pow(a, b);
@@ -233,7 +245,7 @@ int cm_mod(const vector<string>& uStr)
 //TODO: >>>>
 double cm_sqrt(const vector<string>& uStr)
 {
-    double x = stod( uStr[2]);
+    double x = stod( uStr[1]);
     
     return sqrt(x);
 }
@@ -257,7 +269,7 @@ Side Effects:
 //TODO: FACTORIAL
 int cm_fact(const vector<string>& uStr)
 {
-    int factTotal{0};
+    int factTotal{1};
     int a{};
     
     try
@@ -302,7 +314,7 @@ int cm_temp(const vector<string>& uStr) //TODO: ...
         cout << s_tempFormat << '\n';
         return FAILURE;
     }
-
+    
     double origTemp{stod(uStr[1])};
     double tempResult{0};
     
@@ -403,3 +415,4 @@ double cm_strLine()
     
     return SUCCESS;
 }
+
